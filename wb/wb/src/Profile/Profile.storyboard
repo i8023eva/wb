@@ -32,7 +32,7 @@
         <scene sceneID="f56-nU-C91">
             <objects>
                 <navigationController id="IfW-7e-F2B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" id="8px-AS-rSP"/>
+                    <tabBarItem key="tabBarItem" title="我" image="tabbar_profile" selectedImage="tabbar_profile_highlighted" id="8px-AS-rSP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LKt-6X-2te">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,5 +48,6 @@
     </scenes>
     <resources>
         <image name="tabbar_profile" width="30" height="30"/>
+        <image name="tabbar_profile_highlighted" width="30" height="30"/>
     </resources>
 </document>

@@ -10,14 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="qnW-f9-wPj">
             <objects>
-                <tabBarController id="rSs-xc-C4Q" customClass="RootViewController" customModule="wb" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="rSs-xc-C4Q" customClass="MainViewController" customModule="wb" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gwA-QN-EzT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="H9B-eo-Ceu" kind="relationship" relationship="viewControllers" id="OSG-8s-dnn"/>
@@ -41,11 +40,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kur-pr-nOC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="uXS-Rf-mUv"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="" id="uXS-Rf-mUv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qED-Gn-DfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2154" y="2093"/>
+            <point key="canvasLocation" x="868" y="2082"/>
         </scene>
         <!--Home-->
         <scene sceneID="SfW-mQ-LvN">

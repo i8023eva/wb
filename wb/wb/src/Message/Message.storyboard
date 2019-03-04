@@ -23,6 +23,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="消息" id="e83-RX-qvf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eic-PP-c89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +33,7 @@
         <scene sceneID="1xw-LY-Nyd">
             <objects>
                 <navigationController id="M3c-g0-82E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" id="8kr-xc-DBx"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_highlighted" id="8kr-xc-DBx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FsT-Hx-vC3">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,5 +49,6 @@
     </scenes>
     <resources>
         <image name="tabbar_message_center" width="30" height="30"/>
+        <image name="tabbar_message_center_highlighted" width="30" height="30"/>
     </resources>
 </document>

@@ -11,7 +11,6 @@
 		142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2C222BA7EB00C01EA1 /* Main.storyboard */; };
 		142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */; };
 		142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */; };
-		142F8D41222BB1C100C01EA1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F8D40222BB1C100C01EA1 /* RootViewController.swift */; };
 		14CA7BCD222D03CD00E6692E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BCB222D03CD00E6692E /* Home.storyboard */; };
 		14CA7BCF222D03E400E6692E /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BCE222D03E400E6692E /* Message.storyboard */; };
 		14CA7BD2222D03F800E6692E /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BD0222D03F800E6692E /* Discover.storyboard */; };
@@ -20,6 +19,7 @@
 		14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BD7222D049600E6692E /* MessageTableViewController.swift */; };
 		14CA7BDA222D04A100E6692E /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BD9222D04A100E6692E /* DiscoverTableViewController.swift */; };
 		14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BDB222D04AA00E6692E /* ProfileTableViewController.swift */; };
+		14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BDD222D0A4D00E6692E /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,6 @@
 		142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142F8D32222BA7EC00C01EA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		142F8D34222BA7EC00C01EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		142F8D40222BB1C100C01EA1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		14CA7BCC222D03CD00E6692E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = wb/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		14CA7BCE222D03E400E6692E /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		14CA7BD1222D03F800E6692E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = wb/Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		14CA7BD7222D049600E6692E /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		14CA7BD9222D04A100E6692E /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		14CA7BDB222D04AA00E6692E /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		14CA7BDD222D0A4D00E6692E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				142F8D28222BA7EB00C01EA1 /* AppDelegate.swift */,
-				142F8D2C222BA7EB00C01EA1 /* Main.storyboard */,
 				142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */,
 				142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */,
 				142F8D34222BA7EC00C01EA1 /* Info.plist */,
@@ -83,7 +82,7 @@
 		142F8D3A222BAEB900C01EA1 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				142F8D3F222BAEB900C01EA1 /* Root */,
+				142F8D3F222BAEB900C01EA1 /* Main */,
 				142F8D3B222BAEB900C01EA1 /* Home */,
 				142F8D3D222BAEB900C01EA1 /* Message */,
 				142F8D3C222BAEB900C01EA1 /* Discover */,
@@ -128,12 +127,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		142F8D3F222BAEB900C01EA1 /* Root */ = {
+		142F8D3F222BAEB900C01EA1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				142F8D40222BB1C100C01EA1 /* RootViewController.swift */,
+				142F8D2C222BA7EB00C01EA1 /* Main.storyboard */,
+				14CA7BDD222D0A4D00E6692E /* MainViewController.swift */,
 			);
-			path = Root;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +213,8 @@
 			files = (
 				14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */,
 				14CA7BD6222D048D00E6692E /* HomeTableViewController.swift in Sources */,
-				142F8D41222BB1C100C01EA1 /* RootViewController.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
+				14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */,
 				14CA7BDA222D04A100E6692E /* DiscoverTableViewController.swift in Sources */,
 				142F8D29222BA7EB00C01EA1 /* AppDelegate.swift in Sources */,
 			);
