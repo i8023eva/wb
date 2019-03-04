@@ -20,6 +20,7 @@
 		14CA7BDA222D04A100E6692E /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BD9222D04A100E6692E /* DiscoverTableViewController.swift */; };
 		14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BDB222D04AA00E6692E /* ProfileTableViewController.swift */; };
 		14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BDD222D0A4D00E6692E /* MainViewController.swift */; };
+		14CA7BE4222D18B300E6692E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BE3222D18B300E6692E /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		14CA7BD9222D04A100E6692E /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		14CA7BDB222D04AA00E6692E /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		14CA7BDD222D0A4D00E6692E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		14CA7BE3222D18B300E6692E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */,
 				142F8D34222BA7EC00C01EA1 /* Info.plist */,
 				142F8D3A222BAEB900C01EA1 /* src */,
+				14CA7BE1222D176500E6692E /* Util */,
 			);
 			path = wb;
 			sourceTree = "<group>";
@@ -134,6 +137,22 @@
 				14CA7BDD222D0A4D00E6692E /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		14CA7BE1222D176500E6692E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				14CA7BE2222D183500E6692E /* Category */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		14CA7BE2222D183500E6692E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				14CA7BE3222D18B300E6692E /* UIButtonExtension.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +234,7 @@
 				14CA7BD6222D048D00E6692E /* HomeTableViewController.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
 				14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */,
+				14CA7BE4222D18B300E6692E /* UIButtonExtension.swift in Sources */,
 				14CA7BDA222D04A100E6692E /* DiscoverTableViewController.swift in Sources */,
 				142F8D29222BA7EB00C01EA1 /* AppDelegate.swift in Sources */,
 			);
