@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = UIColor.orange
         UITabBar.appearance().unselectedItemTintColor = UIColor.black
+        UINavigationBar.appearance().tintColor = UIColor.orange
         
         return true
     }

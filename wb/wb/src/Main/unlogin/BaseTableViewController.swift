@@ -1,5 +1,5 @@
 //
-//  HomeTableViewController.swift
+//  BaseTableViewController.swift
 //  wb
 //
 //  Created by 李元华 on 2019/3/4.
@@ -8,14 +8,51 @@
 
 import UIKit
 
-class HomeTableViewController: BaseTableViewController {
+class BaseTableViewController: UITableViewController {
+    
+    lazy var visitorView: VisitorView = VisitorView.initView()
+    
+    var isLogin: Bool = false
+    
+    override func loadView() {
+        isLogin ? super.loadView() : setupView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        visitorView.addRotationAnimation()
+        setupNavItem()
     }
-
+    
+    private func setupView() {
+        view = visitorView
+        visitorView.registerBtn.addTarget(self,
+                                          action: #selector(BaseTableViewController.registerBtnClick),
+                                          for: .touchUpInside)
+        visitorView.loginBtn.addTarget(self,
+                                       action: #selector(BaseTableViewController.loginBtnClick),
+                                       for: .touchUpInside)
+    }
+    
+    private func setupNavItem() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "注册",
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(BaseTableViewController.registerBtnClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "登录",
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(BaseTableViewController.loginBtnClick))
+    }
+    
+    @objc private func registerBtnClick() {
+        print(#function)
+    }
+    
+    @objc private func loginBtnClick() {
+        print(#function)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

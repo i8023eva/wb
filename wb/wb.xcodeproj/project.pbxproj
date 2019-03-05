@@ -21,6 +21,9 @@
 		14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BDB222D04AA00E6692E /* ProfileTableViewController.swift */; };
 		14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BDD222D0A4D00E6692E /* MainViewController.swift */; };
 		14CA7BE4222D18B300E6692E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BE3222D18B300E6692E /* UIButtonExtension.swift */; };
+		14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BE8222D45D200E6692E /* BaseTableViewController.swift */; };
+		14CA7BEB222D45F700E6692E /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7BEA222D45F700E6692E /* VisitorView.swift */; };
+		14CA7BED222D460100E6692E /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BEC222D460100E6692E /* VisitorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		14CA7BDB222D04AA00E6692E /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		14CA7BDD222D0A4D00E6692E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		14CA7BE3222D18B300E6692E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		14CA7BE8222D45D200E6692E /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		14CA7BEA222D45F700E6692E /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		14CA7BEC222D460100E6692E /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 			children = (
 				142F8D2C222BA7EB00C01EA1 /* Main.storyboard */,
 				14CA7BDD222D0A4D00E6692E /* MainViewController.swift */,
+				14CA7BE5222D455C00E6692E /* unlogin */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -153,6 +160,16 @@
 				14CA7BE3222D18B300E6692E /* UIButtonExtension.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		14CA7BE5222D455C00E6692E /* unlogin */ = {
+			isa = PBXGroup;
+			children = (
+				14CA7BE8222D45D200E6692E /* BaseTableViewController.swift */,
+				14CA7BEA222D45F700E6692E /* VisitorView.swift */,
+				14CA7BEC222D460100E6692E /* VisitorView.xib */,
+			);
+			path = unlogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +233,7 @@
 				142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */,
 				142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */,
 				14CA7BCF222D03E400E6692E /* Message.storyboard in Resources */,
+				14CA7BED222D460100E6692E /* VisitorView.xib in Resources */,
 				142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */,
 				14CA7BCD222D03CD00E6692E /* Home.storyboard in Resources */,
 				14CA7BD4222D040D00E6692E /* Profile.storyboard in Resources */,
@@ -232,9 +250,11 @@
 			files = (
 				14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */,
 				14CA7BD6222D048D00E6692E /* HomeTableViewController.swift in Sources */,
+				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
 				14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */,
 				14CA7BE4222D18B300E6692E /* UIButtonExtension.swift in Sources */,
+				14CA7BEB222D45F700E6692E /* VisitorView.swift in Sources */,
 				14CA7BDA222D04A100E6692E /* DiscoverTableViewController.swift in Sources */,
 				142F8D29222BA7EB00C01EA1 /* AppDelegate.swift in Sources */,
 			);
