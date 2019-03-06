@@ -12,7 +12,7 @@ class BaseTableViewController: UITableViewController {
     
     lazy var visitorView: VisitorView = VisitorView.initView()
     
-    var isLogin: Bool = false
+    var isLogin: Bool = true
     
     override func loadView() {
         isLogin ? super.loadView() : setupView()

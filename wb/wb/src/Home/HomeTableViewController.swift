@@ -8,79 +8,96 @@
 
 import UIKit
 
-class HomeTableViewController: BaseTableViewController {
+class HomeTableViewController: BaseTableViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+
+    var isPresented: Bool = false
+    
+    
+    private lazy var titleBtn : UIButton = TitleButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         visitorView.addRotationAnimation()
+        
+        if !isLogin {return}
+        
+        setupNavBar()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    private func setupNavBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(normalImgName: "navigationbar_friendattention",
+                                                                highlightedImgName: "navigationbar_friendattention_highlighted")
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(normalImgName: "navigationbar_pop",
+                                                                 highlightedImgName: "navigationbar_pop_highlighted")
+        titleBtn.setTitle("username", for: .normal)
+        titleBtn.addTarget(self, action: #selector(HomeTableViewController.titleBtnClick(btn:)), for: .touchUpInside)
+        navigationItem.titleView = titleBtn
     }
+    
+    @objc private func titleBtnClick(btn: UIButton) {
+        btn.isSelected = !btn.isSelected
+        
+        let pop = PopoverViewContoller()
+        
+        // 弹出视图的样式 custom - 其他设置size、source等无效
+        pop.modalPresentationStyle = UIModalPresentationStyle.custom
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        pop.transitioningDelegate = self
+        
+        present(pop, animated: true, completion: nil)
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    // MARK: 自定义转场
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return EVAPresentationController(presentedViewController: presented, presenting: presenting)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    // MARK: 自定义弹出
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresented = true
+        return self
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    // MARK: 自定义消失
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresented = false
+        return self
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    // MARK: - UIViewControllerAnimatedTransitioning
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.5
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        isPresented ? presentedAnimation(transitionContext: transitionContext) : dismissedAnimation(transitionContext: transitionContext)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func presentedAnimation(transitionContext: UIViewControllerContextTransitioning) {
+        let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to)
+        
+        transitionContext.containerView.addSubview(presentedView!)
+        
+        presentedView?.transform = CGAffineTransform.init(scaleX: 1.0, y: 0.0)
+        presentedView?.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            presentedView?.transform = CGAffineTransform.identity
+        }) { (_) in
+            transitionContext.completeTransition(true)
+        }
     }
-    */
-
+    
+    private func dismissedAnimation(transitionContext: UIViewControllerContextTransitioning) {
+        let dismissedView = transitionContext.view(forKey: UITransitionContextViewKey.from)
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            dismissedView?.transform = CGAffineTransform(scaleX: 1.0, y: 0.00001)
+        }) { (_) in
+            
+            dismissedView?.removeFromSuperview()
+            transitionContext.completeTransition(true)
+        }
+        
+    }
 }

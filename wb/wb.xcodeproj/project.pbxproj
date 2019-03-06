@@ -11,6 +11,11 @@
 		142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2C222BA7EB00C01EA1 /* Main.storyboard */; };
 		142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */; };
 		142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */; };
+		149B4709222E5C6900ED8D72 /* UIBarButtonItemEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B4708222E5C6900ED8D72 /* UIBarButtonItemEx.swift */; };
+		149B470C222E613B00ED8D72 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B470B222E613B00ED8D72 /* TitleButton.swift */; };
+		149B470F222E6D2C00ED8D72 /* PopoverViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B470E222E6D2C00ED8D72 /* PopoverViewContoller.swift */; };
+		149B4711222E6D3900ED8D72 /* PopoverViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149B4710222E6D3900ED8D72 /* PopoverViewContoller.xib */; };
+		149B4713222E9C6400ED8D72 /* EVAPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B4712222E9C6400ED8D72 /* EVAPresentationController.swift */; };
 		14CA7BCD222D03CD00E6692E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BCB222D03CD00E6692E /* Home.storyboard */; };
 		14CA7BCF222D03E400E6692E /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BCE222D03E400E6692E /* Message.storyboard */; };
 		14CA7BD2222D03F800E6692E /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BD0222D03F800E6692E /* Discover.storyboard */; };
@@ -33,6 +38,11 @@
 		142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142F8D32222BA7EC00C01EA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		142F8D34222BA7EC00C01EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		149B4708222E5C6900ED8D72 /* UIBarButtonItemEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemEx.swift; sourceTree = "<group>"; };
+		149B470B222E613B00ED8D72 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		149B470E222E6D2C00ED8D72 /* PopoverViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewContoller.swift; sourceTree = "<group>"; };
+		149B4710222E6D3900ED8D72 /* PopoverViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewContoller.xib; sourceTree = "<group>"; };
+		149B4712222E9C6400ED8D72 /* EVAPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVAPresentationController.swift; sourceTree = "<group>"; };
 		14CA7BCC222D03CD00E6692E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = wb/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		14CA7BCE222D03E400E6692E /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		14CA7BD1222D03F800E6692E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = wb/Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -103,6 +113,7 @@
 		142F8D3B222BAEB900C01EA1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				149B470D222E6C3300ED8D72 /* Popover */,
 				14CA7BCB222D03CD00E6692E /* Home.storyboard */,
 				14CA7BD5222D048D00E6692E /* HomeTableViewController.swift */,
 			);
@@ -146,9 +157,28 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		149B470A222E611700ED8D72 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				149B470B222E613B00ED8D72 /* TitleButton.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		149B470D222E6C3300ED8D72 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				149B470E222E6D2C00ED8D72 /* PopoverViewContoller.swift */,
+				149B4710222E6D3900ED8D72 /* PopoverViewContoller.xib */,
+				149B4712222E9C6400ED8D72 /* EVAPresentationController.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
 		14CA7BE1222D176500E6692E /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				149B470A222E611700ED8D72 /* Custom */,
 				14CA7BE2222D183500E6692E /* Category */,
 			);
 			path = Util;
@@ -158,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				14CA7BE3222D18B300E6692E /* UIButtonExtension.swift */,
+				149B4708222E5C6900ED8D72 /* UIBarButtonItemEx.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -232,6 +263,7 @@
 			files = (
 				142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */,
 				142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */,
+				149B4711222E6D3900ED8D72 /* PopoverViewContoller.xib in Resources */,
 				14CA7BCF222D03E400E6692E /* Message.storyboard in Resources */,
 				14CA7BED222D460100E6692E /* VisitorView.xib in Resources */,
 				142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */,
@@ -249,13 +281,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */,
+				149B470F222E6D2C00ED8D72 /* PopoverViewContoller.swift in Sources */,
 				14CA7BD6222D048D00E6692E /* HomeTableViewController.swift in Sources */,
 				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
+				149B470C222E613B00ED8D72 /* TitleButton.swift in Sources */,
 				14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */,
+				149B4709222E5C6900ED8D72 /* UIBarButtonItemEx.swift in Sources */,
 				14CA7BE4222D18B300E6692E /* UIButtonExtension.swift in Sources */,
 				14CA7BEB222D45F700E6692E /* VisitorView.swift in Sources */,
 				14CA7BDA222D04A100E6692E /* DiscoverTableViewController.swift in Sources */,
+				149B4713222E9C6400ED8D72 /* EVAPresentationController.swift in Sources */,
 				142F8D29222BA7EB00C01EA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

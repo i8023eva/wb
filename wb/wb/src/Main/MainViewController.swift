@@ -22,6 +22,8 @@ class MainViewController: UITabBarController {
         publishBtn.addTarget(self, action: #selector(MainViewController.publishBtnClick),
                              for: UIControl.Event.touchUpInside)
         tabBar.addSubview(publishBtn)
+        
+        
     }
     
     @objc private func publishBtnClick() {

@@ -26,4 +26,14 @@ extension UIButton {
                                      for: UIControl.State.highlighted)
         sizeToFit()
     }
+    
+    convenience init(normalImgName: String, highlightedImgName: String) {
+        self.init()
+        
+        setImage(UIImage(named: normalImgName),
+                 for: UIControl.State.normal)
+        setImage(UIImage(named: highlightedImgName),
+                 for: UIControl.State.highlighted)
+        sizeToFit()
+    }
 }
