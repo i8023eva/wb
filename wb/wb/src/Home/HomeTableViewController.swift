@@ -8,10 +8,12 @@
 
 import UIKit
 
-class HomeTableViewController: BaseTableViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-
-    var isPresented: Bool = false
+class HomeTableViewController: BaseTableViewController {
     
+    // 两种情况需要self。 函数中有歧义； 闭包
+    private lazy var animatedTransition: AnimatedTransition = AnimatedTransition {[weak self] (status) in
+        self?.titleBtn.isSelected = status
+    }
     
     private lazy var titleBtn : UIButton = TitleButton()
 
@@ -36,68 +38,20 @@ class HomeTableViewController: BaseTableViewController, UIViewControllerTransiti
     }
     
     @objc private func titleBtnClick(btn: UIButton) {
-        btn.isSelected = !btn.isSelected
+//        btn.isSelected = !btn.isSelected
         
         let pop = PopoverViewContoller()
         
         // 弹出视图的样式 custom - 其他设置size、source等无效
         pop.modalPresentationStyle = UIModalPresentationStyle.custom
 
-        pop.transitioningDelegate = self
+        pop.transitioningDelegate = animatedTransition  //一个遵守协议的对象
+        
+        let width: CGFloat = 150.0
+        animatedTransition.presentedFrame = CGRect(x: UIScreen.main.bounds.width * 0.5 - width * 0.5, y: 80, width: width, height: 200)
         
         present(pop, animated: true, completion: nil)
     }
     
-    // MARK: 自定义转场
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return EVAPresentationController(presentedViewController: presented, presenting: presenting)
-    }
-    // MARK: 自定义弹出
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        isPresented = true
-        return self
-    }
-    // MARK: 自定义消失
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        isPresented = false
-        return self
-    }
     
-    // MARK: - UIViewControllerAnimatedTransitioning
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        
-        isPresented ? presentedAnimation(transitionContext: transitionContext) : dismissedAnimation(transitionContext: transitionContext)
-    }
-    
-    private func presentedAnimation(transitionContext: UIViewControllerContextTransitioning) {
-        let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to)
-        
-        transitionContext.containerView.addSubview(presentedView!)
-        
-        presentedView?.transform = CGAffineTransform.init(scaleX: 1.0, y: 0.0)
-        presentedView?.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
-        
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            presentedView?.transform = CGAffineTransform.identity
-        }) { (_) in
-            transitionContext.completeTransition(true)
-        }
-    }
-    
-    private func dismissedAnimation(transitionContext: UIViewControllerContextTransitioning) {
-        let dismissedView = transitionContext.view(forKey: UITransitionContextViewKey.from)
-        
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            dismissedView?.transform = CGAffineTransform(scaleX: 1.0, y: 0.00001)
-        }) { (_) in
-            
-            dismissedView?.removeFromSuperview()
-            transitionContext.completeTransition(true)
-        }
-        
-    }
 }

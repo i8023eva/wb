@@ -17,12 +17,13 @@ class EVAPresentationController: UIPresentationController {
         coverView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(EVAPresentationController.coverViewClick)))
         return coverView
     }()
-
+    
+    var presentedFrame: CGRect = CGRect.zero
+    
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
         
-        let width: CGFloat = 100.0
-        presentedView?.frame = CGRect(x: UIScreen.main.bounds.width * 0.5 - width * 0.5, y: 80, width: width, height: 200)
+        presentedView?.frame = presentedFrame
         setupCoverView()
     }
     
