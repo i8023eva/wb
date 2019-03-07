@@ -48,7 +48,8 @@ class HomeTableViewController: BaseTableViewController {
         pop.transitioningDelegate = animatedTransition  //一个遵守协议的对象
         
         let width: CGFloat = 150.0
-        animatedTransition.presentedFrame = CGRect(x: UIScreen.main.bounds.width * 0.5 - width * 0.5, y: 80, width: width, height: 200)
+        let y: CGFloat = UIApplication.shared.statusBarFrame.height + 44 - 10
+        animatedTransition.presentedFrame = CGRect(x: UIScreen.main.bounds.width * 0.5 - width * 0.5, y: y, width: width, height: 200)
         
         present(pop, animated: true, completion: nil)
     }
