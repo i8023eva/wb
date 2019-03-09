@@ -12,6 +12,11 @@
 		142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2C222BA7EB00C01EA1 /* Main.storyboard */; };
 		142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */; };
 		142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */; };
+		1474F47A2233DD8F00273B64 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474F4792233DD8F00273B64 /* UserAccount.swift */; };
+		1490263422313D1400B0EEC9 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263322313D1400B0EEC9 /* NetworkingManager.swift */; };
+		1490263622313DF900B0EEC9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263522313DF900B0EEC9 /* Common.swift */; };
+		1490263A22313EAA00B0EEC9 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263822313EAA00B0EEC9 /* OAuthViewController.swift */; };
+		1490263B22313EAA00B0EEC9 /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1490263922313EAA00B0EEC9 /* OAuthViewController.xib */; };
 		149B4709222E5C6900ED8D72 /* UIBarButtonItemEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B4708222E5C6900ED8D72 /* UIBarButtonItemEx.swift */; };
 		149B470C222E613B00ED8D72 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B470B222E613B00ED8D72 /* TitleButton.swift */; };
 		149B470F222E6D2C00ED8D72 /* PopoverViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B470E222E6D2C00ED8D72 /* PopoverViewContoller.swift */; };
@@ -41,6 +46,11 @@
 		142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142F8D32222BA7EC00C01EA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		142F8D34222BA7EC00C01EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1474F4792233DD8F00273B64 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		1490263322313D1400B0EEC9 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		1490263522313DF900B0EEC9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		1490263822313EAA00B0EEC9 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		1490263922313EAA00B0EEC9 /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		149B4708222E5C6900ED8D72 /* UIBarButtonItemEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemEx.swift; sourceTree = "<group>"; };
 		149B470B222E613B00ED8D72 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		149B470E222E6D2C00ED8D72 /* PopoverViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewContoller.swift; sourceTree = "<group>"; };
@@ -161,15 +171,28 @@
 			children = (
 				142F8D2C222BA7EB00C01EA1 /* Main.storyboard */,
 				14CA7BDD222D0A4D00E6692E /* MainViewController.swift */,
+				1490263722313E7500B0EEC9 /* OAuth */,
 				14CA7BE5222D455C00E6692E /* unlogin */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
+		1490263722313E7500B0EEC9 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				1490263922313EAA00B0EEC9 /* OAuthViewController.xib */,
+				1490263822313EAA00B0EEC9 /* OAuthViewController.swift */,
+				1474F4792233DD8F00273B64 /* UserAccount.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		149B470A222E611700ED8D72 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				1490263322313D1400B0EEC9 /* NetworkingManager.swift */,
 				149B470B222E613B00ED8D72 /* TitleButton.swift */,
+				1490263522313DF900B0EEC9 /* Common.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -290,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1490263B22313EAA00B0EEC9 /* OAuthViewController.xib in Resources */,
 				142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */,
 				142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */,
 				149B4711222E6D3900ED8D72 /* PopoverViewContoller.xib in Resources */,
@@ -354,9 +378,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1490263622313DF900B0EEC9 /* Common.swift in Sources */,
 				14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */,
+				1474F47A2233DD8F00273B64 /* UserAccount.swift in Sources */,
 				149B470F222E6D2C00ED8D72 /* PopoverViewContoller.swift in Sources */,
+				1490263A22313EAA00B0EEC9 /* OAuthViewController.swift in Sources */,
 				14CA7BD6222D048D00E6692E /* HomeTableViewController.swift in Sources */,
+				1490263422313D1400B0EEC9 /* NetworkingManager.swift in Sources */,
 				142C3C44222FC2AA0070EE5B /* AnimatedTransition.swift in Sources */,
 				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
@@ -534,7 +562,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -551,7 +582,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

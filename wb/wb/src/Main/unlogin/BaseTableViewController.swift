@@ -12,8 +12,6 @@ class BaseTableViewController: UITableViewController {
     
     lazy var visitorView: VisitorView = VisitorView.initView()
     
-    var isLogin: Bool = true
-    
     override func loadView() {
         isLogin ? super.loadView() : setupView()
     }
@@ -50,7 +48,12 @@ class BaseTableViewController: UITableViewController {
     }
     
     @objc private func loginBtnClick() {
-        print(#function)
+        
+        let oaVC = UINavigationController(rootViewController: OAuthViewController())
+        // FIXME: Snapshotting
+        oaVC.modalPresentationStyle = UIModalPresentationStyle.currentContext
+        
+        self.present(oaVC, animated: true, completion: nil)
     }
     
     // MARK: - Table view data source

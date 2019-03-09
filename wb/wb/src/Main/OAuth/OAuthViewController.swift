@@ -1,0 +1,103 @@
+//
+//  OAuthViewController.swift
+//  wb
+//
+//  Created by 李元华 on 2019/3/7.
+//  Copyright © 2019年 李元华. All rights reserved.
+//
+
+import UIKit
+import WebKit
+import SVProgressHUD
+
+class OAuthViewController: UIViewController {
+
+    // MARK: WK xib使用必须有个实例
+    @IBOutlet weak var webView: WKWebView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupNavBar()
+        
+        let request = URLRequest(url:
+            URL(string: "https://api.weibo.com/oauth2/authorize?client_id=\(client_id)&redirect_uri=\(redirect_uri)")!)
+        
+        webView.load(request)
+        
+        webView.navigationDelegate = self
+    }
+
+    private func setupNavBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .plain, target: self, action: #selector(closeBtnClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "填充", style: .plain, target: self, action: #selector(fillBtnClick))
+        title = "用户登录"
+    }
+    
+    @objc private func closeBtnClick() {
+        dismiss(animated: true, completion: nil)
+    }
+    @objc private func fillBtnClick() {
+        
+        let jsCode = "document.getElementById('userId').value='1009175863@qq.com';"
+        
+        webView.evaluateJavaScript(jsCode, completionHandler: nil)
+        
+    }
+}
+// MARK: - WKNavigationDelegate
+extension OAuthViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        SVProgressHUD.show()
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        SVProgressHUD.dismiss()
+    }
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        SVProgressHUD.dismiss()
+    }
+    
+    // 准备加载页面
+     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        
+        guard let URL = webView.url else {
+            decisionHandler(.allow)
+            return
+        }
+        // http://i8023eva.github.io/?code=5899db13bf2feac60c4278e576c7830f
+        let URLString = URL.absoluteString
+        
+        guard URLString.contains("code=") else {
+        
+            decisionHandler(.allow)
+            return
+        }
+        
+        let code = URLString.components(separatedBy: "code=").last!
+        
+        accessToken(code: code)
+        
+        decisionHandler(.cancel)
+    }
+    /// 获取授权过的Access Token
+    private func accessToken(code: String) {
+        NetworkingManager.share.loadAccessToken(code: code) { (data, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            guard let infoDict = data else {
+                return
+            }
+            
+            let user = UserAccount(dict: infoDict)
+            
+            guard let accoutToken = user.access_token else {
+                return
+            }
+            
+            print(user)
+        }
+    }
+}
