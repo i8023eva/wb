@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().unselectedItemTintColor = UIColor.black
         UINavigationBar.appearance().tintColor = UIColor.orange
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = isLogin ? WelcomeViewController() : UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -35,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -47,4 +53,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

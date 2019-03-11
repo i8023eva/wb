@@ -32,7 +32,7 @@ class HomeTableViewController: BaseTableViewController {
                                                                 highlightedImgName: "navigationbar_friendattention_highlighted")
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(normalImgName: "navigationbar_pop",
                                                                  highlightedImgName: "navigationbar_pop_highlighted")
-        titleBtn.setTitle("username", for: .normal)
+        titleBtn.setTitle(UserSession.shared.user?.screen_name, for: .normal)
         titleBtn.addTarget(self, action: #selector(HomeTableViewController.titleBtnClick(btn:)), for: .touchUpInside)
         navigationItem.titleView = titleBtn
     }

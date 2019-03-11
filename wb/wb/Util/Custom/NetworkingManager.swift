@@ -16,7 +16,7 @@ enum requestType {
 class NetworkingManager: AFHTTPSessionManager {
 
     // 单例 let- 线程安全
-    static let share: NetworkingManager = {
+    static let shared: NetworkingManager = {
         let manager = NetworkingManager()
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
         return manager
@@ -49,6 +49,7 @@ extension NetworkingManager {
 }
 
 extension NetworkingManager {
+    /// 获取access_token
     func loadAccessToken(code: String, completion: @escaping (_ data: [String : AnyObject]?, _ error: Error?) -> ()) {
         let parameters = [
             "client_id" : client_id,
@@ -67,7 +68,18 @@ extension NetworkingManager {
          uid = 3967093948;
          }
          */
-        NetworkingManager.share.request(requestType: .POST, URLString: "https://api.weibo.com/oauth2/access_token", parameters: parameters as [String : AnyObject]) { (data, error) in
+        NetworkingManager.shared.request(requestType: .POST, URLString: "https://api.weibo.com/oauth2/access_token", parameters: parameters as [String : AnyObject]) { (data, error) in
+            completion(data as? [String : AnyObject], error)
+        }
+    }
+    /// 获取用户信息
+    func loadUserInfo(user: UserAccount, completion: @escaping (_ data: [String : AnyObject]?, _ error: Error?) -> ()) {
+        let parameters = [
+            "access_token" : user.access_token,
+            "uid" : user.uid
+        ]
+        
+        NetworkingManager.shared.request(requestType: .GET, URLString: "https://api.weibo.com/2/users/show.json", parameters: parameters as [String : AnyObject]) { (data, error) in
             completion(data as? [String : AnyObject], error)
         }
     }

@@ -12,6 +12,9 @@
 		142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2C222BA7EB00C01EA1 /* Main.storyboard */; };
 		142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */; };
 		142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */; };
+		1465A5282234F7D000BB2251 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A5272234F7D000BB2251 /* UserSession.swift */; };
+		1465A52C223533B100BB2251 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A52A223533B100BB2251 /* WelcomeViewController.swift */; };
+		1465A52D223533B100BB2251 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465A52B223533B100BB2251 /* WelcomeViewController.xib */; };
 		1474F47A2233DD8F00273B64 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474F4792233DD8F00273B64 /* UserAccount.swift */; };
 		1490263422313D1400B0EEC9 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263322313D1400B0EEC9 /* NetworkingManager.swift */; };
 		1490263622313DF900B0EEC9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263522313DF900B0EEC9 /* Common.swift */; };
@@ -46,6 +49,9 @@
 		142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142F8D32222BA7EC00C01EA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		142F8D34222BA7EC00C01EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1465A5272234F7D000BB2251 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		1465A52A223533B100BB2251 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1465A52B223533B100BB2251 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		1474F4792233DD8F00273B64 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		1490263322313D1400B0EEC9 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		1490263522313DF900B0EEC9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -171,10 +177,20 @@
 			children = (
 				142F8D2C222BA7EB00C01EA1 /* Main.storyboard */,
 				14CA7BDD222D0A4D00E6692E /* MainViewController.swift */,
+				1465A5292235339100BB2251 /* Welcome */,
 				1490263722313E7500B0EEC9 /* OAuth */,
 				14CA7BE5222D455C00E6692E /* unlogin */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		1465A5292235339100BB2251 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				1465A52B223533B100BB2251 /* WelcomeViewController.xib */,
+				1465A52A223533B100BB2251 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		1490263722313E7500B0EEC9 /* OAuth */ = {
@@ -183,6 +199,7 @@
 				1490263922313EAA00B0EEC9 /* OAuthViewController.xib */,
 				1490263822313EAA00B0EEC9 /* OAuthViewController.swift */,
 				1474F4792233DD8F00273B64 /* UserAccount.swift */,
+				1465A5272234F7D000BB2251 /* UserSession.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -318,6 +335,7 @@
 				142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */,
 				149B4711222E6D3900ED8D72 /* PopoverViewContoller.xib in Resources */,
 				14CA7BCF222D03E400E6692E /* Message.storyboard in Resources */,
+				1465A52D223533B100BB2251 /* WelcomeViewController.xib in Resources */,
 				14CA7BED222D460100E6692E /* VisitorView.xib in Resources */,
 				142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */,
 				14CA7BCD222D03CD00E6692E /* Home.storyboard in Resources */,
@@ -379,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1490263622313DF900B0EEC9 /* Common.swift in Sources */,
+				1465A52C223533B100BB2251 /* WelcomeViewController.swift in Sources */,
 				14CA7BDC222D04AA00E6692E /* ProfileTableViewController.swift in Sources */,
 				1474F47A2233DD8F00273B64 /* UserAccount.swift in Sources */,
 				149B470F222E6D2C00ED8D72 /* PopoverViewContoller.swift in Sources */,
@@ -388,6 +407,7 @@
 				142C3C44222FC2AA0070EE5B /* AnimatedTransition.swift in Sources */,
 				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
+				1465A5282234F7D000BB2251 /* UserSession.swift in Sources */,
 				149B470C222E613B00ED8D72 /* TitleButton.swift in Sources */,
 				14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */,
 				149B4709222E5C6900ED8D72 /* UIBarButtonItemEx.swift in Sources */,
@@ -566,6 +586,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

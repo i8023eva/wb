@@ -14,20 +14,20 @@ class OAuthViewController: UIViewController {
 
     // MARK: WK xib使用必须有个实例
     @IBOutlet weak var webView: WKWebView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavBar()
         
-        let request = URLRequest(url:
-            URL(string: "https://api.weibo.com/oauth2/authorize?client_id=\(client_id)&redirect_uri=\(redirect_uri)")!)
-        
-        webView.load(request)
-        
-        webView.navigationDelegate = self
+        setupWebView()
     }
+}
 
+// MARK: - 设置导航栏
+extension OAuthViewController {
+    
     private func setupNavBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .plain, target: self, action: #selector(closeBtnClick))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "填充", style: .plain, target: self, action: #selector(fillBtnClick))
@@ -42,11 +42,21 @@ class OAuthViewController: UIViewController {
         let jsCode = "document.getElementById('userId').value='1009175863@qq.com';"
         
         webView.evaluateJavaScript(jsCode, completionHandler: nil)
-        
     }
 }
+
 // MARK: - WKNavigationDelegate
 extension OAuthViewController: WKNavigationDelegate {
+    
+    fileprivate func setupWebView() {
+        let request = URLRequest(url:
+            URL(string: "https://api.weibo.com/oauth2/authorize?client_id=\(client_id)&redirect_uri=\(redirect_uri)")!)
+        
+        webView.load(request)
+        
+        webView.navigationDelegate = self
+    }
+    
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         SVProgressHUD.show()
     }
@@ -81,9 +91,9 @@ extension OAuthViewController: WKNavigationDelegate {
     }
     /// 获取授权过的Access Token
     private func accessToken(code: String) {
-        NetworkingManager.share.loadAccessToken(code: code) { (data, error) in
+        NetworkingManager.shared.loadAccessToken(code: code) { (data, error) in
             if error != nil {
-                print(error!)
+                print("\(#line)---\(error!)")
                 return
             }
             
@@ -91,13 +101,30 @@ extension OAuthViewController: WKNavigationDelegate {
                 return
             }
             
-            let user = UserAccount(dict: infoDict)
-            
-            guard let accoutToken = user.access_token else {
+            self.userInfo(infoDict: infoDict)
+        }
+    }
+    /// 根据 token 获取用户信息
+    private func userInfo(infoDict: [String : AnyObject]) {
+        let user = UserAccount(dict: infoDict)
+        
+        NetworkingManager.shared.loadUserInfo(user: user, completion: { (data, error) in
+            if error != nil {
+                EVALog(message: "")
                 return
             }
+            guard let userInfoDict = data else {
+                return
+            }
+            user.screen_name = userInfoDict["screen_name"] as? String
+            user.avatar_large = userInfoDict["avatar_large"] as? String
             
-            print(user)
-        }
+            UserSession.shared.saveFile(user: user)
+
+            // FIXME: 初次登录  saveFile 单例的 user 还是空，重新赋值
+            self.dismiss(animated: false, completion: {
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
+        })
     }
 }
