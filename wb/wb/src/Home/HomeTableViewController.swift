@@ -15,7 +15,9 @@ class HomeTableViewController: BaseTableViewController {
         self?.titleBtn.isSelected = status
     }
     
-    private lazy var titleBtn : UIButton = TitleButton()
+    private lazy var titleBtn: TitleButton = TitleButton()
+    
+    private lazy var statusArr: [Status] = [Status]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,55 @@ class HomeTableViewController: BaseTableViewController {
         if !isLogin {return}
         
         setupNavBar()
+        
+        loadHomeInfo()
     }
     
+
+}
+
+// MARK: - delegate & datasource
+extension HomeTableViewController{
+    
+    private func loadHomeInfo() {
+        NetworkingManager.shared.loadHomeInfo { (statuses, error) in
+            
+            if error != nil {
+                EVALog(message: error)
+                return
+            }
+            guard let dataArr = statuses else {
+                return
+            }
+            for dataDict in dataArr {
+                let status = Status(dict: dataDict)
+                self.statusArr.append(status)
+            }
+//            print(Thread.current)
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusArr.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeID")!
+        
+        let status = statusArr[indexPath.row]
+        
+        cell.textLabel?.text = status.sourceReplace
+        
+        return cell
+    }
+}
+// MARK: -  navigationItem
+extension HomeTableViewController{
+    
     private func setupNavBar() {
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(normalImgName: "navigationbar_friendattention",
                                                                 highlightedImgName: "navigationbar_friendattention_highlighted")
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(normalImgName: "navigationbar_pop",
@@ -38,13 +86,13 @@ class HomeTableViewController: BaseTableViewController {
     }
     
     @objc private func titleBtnClick(btn: UIButton) {
-//        btn.isSelected = !btn.isSelected
+        //        btn.isSelected = !btn.isSelected
         
         let pop = PopoverViewContoller()
         
         // 弹出视图的样式 custom - 其他设置size、source等无效
         pop.modalPresentationStyle = UIModalPresentationStyle.custom
-
+        
         pop.transitioningDelegate = animatedTransition  //一个遵守协议的对象
         
         let width: CGFloat = 150.0
@@ -53,6 +101,4 @@ class HomeTableViewController: BaseTableViewController {
         
         present(pop, animated: true, completion: nil)
     }
-    
-    
 }

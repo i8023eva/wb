@@ -41,6 +41,8 @@ class UserAccount: NSObject, NSCoding {
         
         setValuesForKeys(dict)
     }
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
+    
     //归档
     func encode(with aCoder: NSCoder) {
         aCoder.encode(access_token, forKey: "access_token")
@@ -58,7 +60,7 @@ class UserAccount: NSObject, NSCoding {
         avatar_large = aDecoder.decodeObject(forKey: "avatar_large") as? String
     }
     
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
+
     
     override var description: String {
         // 对象转字典

@@ -17,6 +17,9 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        iconView.layer.cornerRadius = 45
+//        iconView.layer.masksToBounds = true
+        
         let iconURLString = UserSession.shared.user?.avatar_large
         
         // ?? : 如果??前面的可选类型有值,那么将前面的可选类型进行解包并且赋值

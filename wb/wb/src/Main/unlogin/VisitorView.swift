@@ -29,7 +29,7 @@ class VisitorView: UIView {
         rotationView.isHidden = true
     }
     
-    /// 添加动画
+    /// 添加转盘动画
     func addRotationAnimation() {
 
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")

@@ -48,6 +48,7 @@ extension NetworkingManager {
     }
 }
 
+// MARK: - 封装方法
 extension NetworkingManager {
     /// 获取access_token
     func loadAccessToken(code: String, completion: @escaping (_ data: [String : AnyObject]?, _ error: Error?) -> ()) {
@@ -72,6 +73,7 @@ extension NetworkingManager {
             completion(data as? [String : AnyObject], error)
         }
     }
+    
     /// 获取用户信息
     func loadUserInfo(user: UserAccount, completion: @escaping (_ data: [String : AnyObject]?, _ error: Error?) -> ()) {
         let parameters = [
@@ -81,6 +83,24 @@ extension NetworkingManager {
         
         NetworkingManager.shared.request(requestType: .GET, URLString: "https://api.weibo.com/2/users/show.json", parameters: parameters as [String : AnyObject]) { (data, error) in
             completion(data as? [String : AnyObject], error)
+        }
+    }
+    
+    /// 获取当前登录用户及其所关注（授权）用户的最新微博
+    func loadHomeInfo(completion: @escaping (_ data: [[String : AnyObject]]?,_ error: Error?) -> ()) {
+        
+        let parameters = [
+            "access_token" : UserSession.shared.user?.access_token
+        ]
+        
+        NetworkingManager.shared.request(requestType: .GET, URLString: "https://api.weibo.com/2/statuses/home_timeline.json", parameters: parameters as [String : AnyObject]) { (data, error) in
+            
+            guard let dataDict = data as? [String : AnyObject] else {
+                completion(nil, error)
+                return
+            }
+            
+            completion(dataDict["statuses"] as? [[String : AnyObject]], error)
         }
     }
 }

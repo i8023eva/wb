@@ -17,16 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeID" rowHeight="200" id="7tN-Db-lkc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7tN-Db-lkc" id="hoV-6K-jsN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="hTB-ai-vcU" id="Yqb-Fz-7RU"/>
-                            <outlet property="delegate" destination="hTB-ai-vcU" id="05Z-is-wgT"/>
+                            <outlet property="dataSource" destination="hTB-ai-vcU" id="yV3-Fo-gct"/>
+                            <outlet property="delegate" destination="hTB-ai-vcU" id="iEk-mF-ghc"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="首页" id="JjP-VI-jua"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2i-TB-QCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="1003"/>
+            <point key="canvasLocation" x="1144.8" y="1002.5487256371815"/>
         </scene>
         <!--首页-->
         <scene sceneID="B5J-1H-SfC">
