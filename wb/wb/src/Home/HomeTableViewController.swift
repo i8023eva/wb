@@ -17,7 +17,7 @@ class HomeTableViewController: BaseTableViewController {
     
     private lazy var titleBtn: TitleButton = TitleButton()
     
-    private lazy var statusArr: [Status] = [Status]()
+    private lazy var statusSessionArr: [StatusSession] = [StatusSession]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,9 @@ class HomeTableViewController: BaseTableViewController {
         setupNavBar()
         
         loadHomeInfo()
+        
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
 
@@ -49,7 +52,7 @@ extension HomeTableViewController{
             }
             for dataDict in dataArr {
                 let status = Status(dict: dataDict)
-                self.statusArr.append(status)
+                self.statusSessionArr.append(StatusSession(status: status))
             }
 //            print(Thread.current)
             self.tableView.reloadData()
@@ -57,16 +60,14 @@ extension HomeTableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusArr.count
+        return statusSessionArr.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeID")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeTableViewCell
         
-        let status = statusArr[indexPath.row]
-        
-        cell.textLabel?.text = status.sourceReplace
+        cell.statusSession = statusSessionArr[indexPath.row]
         
         return cell
     }

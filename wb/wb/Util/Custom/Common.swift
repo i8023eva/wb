@@ -8,8 +8,7 @@
 
 import Foundation
 
-/// 是否登录
-let isLogin: Bool = UserSession.shared.isLogin
+
 /// 申请应用时分配的AppKey
 let client_id: String = "4023078902"
 /// 申请应用时分配的AppSecret。

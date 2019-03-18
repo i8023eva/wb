@@ -12,6 +12,9 @@ class BaseTableViewController: UITableViewController {
     
     lazy var visitorView: VisitorView = VisitorView.initView()
     
+    /// 是否登录 子类
+    var isLogin: Bool = UserSession.shared.isLogin
+    
     override func loadView() {
         isLogin ? super.loadView() : setupView()
     }

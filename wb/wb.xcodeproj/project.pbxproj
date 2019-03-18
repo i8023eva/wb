@@ -16,6 +16,9 @@
 		1465A52C223533B100BB2251 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A52A223533B100BB2251 /* WelcomeViewController.swift */; };
 		1465A52D223533B100BB2251 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465A52B223533B100BB2251 /* WelcomeViewController.xib */; };
 		1474F47A2233DD8F00273B64 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474F4792233DD8F00273B64 /* UserAccount.swift */; };
+		14776C13223F45D900EDF619 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C12223F45D900EDF619 /* User.swift */; };
+		14776C15223F54CB00EDF619 /* StatusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C14223F54CB00EDF619 /* StatusSession.swift */; };
+		14776C17223F586600EDF619 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C16223F586600EDF619 /* HomeTableViewCell.swift */; };
 		1490263422313D1400B0EEC9 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263322313D1400B0EEC9 /* NetworkingManager.swift */; };
 		1490263622313DF900B0EEC9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263522313DF900B0EEC9 /* Common.swift */; };
 		1490263A22313EAA00B0EEC9 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263822313EAA00B0EEC9 /* OAuthViewController.swift */; };
@@ -55,6 +58,9 @@
 		1465A52A223533B100BB2251 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1465A52B223533B100BB2251 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		1474F4792233DD8F00273B64 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		14776C12223F45D900EDF619 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		14776C14223F54CB00EDF619 /* StatusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSession.swift; sourceTree = "<group>"; };
+		14776C16223F586600EDF619 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		1490263322313D1400B0EEC9 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		1490263522313DF900B0EEC9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1490263822313EAA00B0EEC9 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				14C0A10D223E2C7D004B9337 /* Model */,
 				14CA7BCB222D03CD00E6692E /* Home.storyboard */,
 				14CA7BD5222D048D00E6692E /* HomeTableViewController.swift */,
+				14776C16223F586600EDF619 /* HomeTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -234,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				14C0A10E223E2CC5004B9337 /* Status.swift */,
+				14776C12223F45D900EDF619 /* User.swift */,
+				14776C14223F54CB00EDF619 /* StatusSession.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 				1490263422313D1400B0EEC9 /* NetworkingManager.swift in Sources */,
 				142C3C44222FC2AA0070EE5B /* AnimatedTransition.swift in Sources */,
 				14C0A12F223E7350004B9337 /* DateEx.swift in Sources */,
+				14776C17223F586600EDF619 /* HomeTableViewCell.swift in Sources */,
 				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
 				1465A5282234F7D000BB2251 /* UserSession.swift in Sources */,
@@ -432,6 +442,8 @@
 				14CA7BDA222D04A100E6692E /* DiscoverTableViewController.swift in Sources */,
 				149B4713222E9C6400ED8D72 /* EVAPresentationController.swift in Sources */,
 				142F8D29222BA7EB00C01EA1 /* AppDelegate.swift in Sources */,
+				14776C15223F54CB00EDF619 /* StatusSession.swift in Sources */,
+				14776C13223F45D900EDF619 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
