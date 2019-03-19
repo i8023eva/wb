@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeTableViewController: BaseTableViewController {
     
@@ -55,6 +56,26 @@ extension HomeTableViewController{
                 self.statusSessionArr.append(StatusSession(status: status))
             }
 //            print(Thread.current)
+            self.cacheImage(sessionArr: self.statusSessionArr)
+        }
+    }
+    
+    private func cacheImage(sessionArr: [StatusSession]) {
+        
+        let group = DispatchGroup()
+        
+        for session in sessionArr {
+            for picUrl in session.picURLsReplace {
+                group.enter()
+                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picUrl, options: [], progress: nil, completed: { (_, _, _, _) in
+                    EVALog(message: "下载图片")
+                    group.leave()
+                })
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            EVALog(message: "刷新表格")
             self.tableView.reloadData()
         }
     }

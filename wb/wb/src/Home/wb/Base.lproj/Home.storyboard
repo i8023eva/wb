@@ -71,15 +71,12 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容内容内容内容内容内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epc-ED-YAs">
-                                            <rect key="frame" x="10" y="60" width="147.5" height="225.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="147.5" id="Ssf-hw-5wn"/>
-                                            </constraints>
+                                            <rect key="frame" x="10" y="60" width="147.5" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajP-I6-vz6" userLabel="toolbar">
-                                            <rect key="frame" x="0.0" y="295.5" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="296" width="375" height="40"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-e0-9PL">
                                                     <rect key="frame" x="0.0" y="1" width="375" height="34"/>
@@ -118,37 +115,78 @@
                                                 <constraint firstItem="Pne-e0-9PL" firstAttribute="leading" secondItem="ajP-I6-vz6" secondAttribute="leading" id="piD-Pw-TjM"/>
                                             </constraints>
                                         </view>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CGc-ML-tmU" customClass="PicCollectionView" customModule="wb" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="84" width="240" height="202"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="240" id="P03-5m-abP"/>
+                                                <constraint firstAttribute="height" constant="202" id="eQ2-uI-Tuf"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Grz-yn-dGC">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCell" id="WRN-ot-AnZ" customClass="PicCollectionViewCell" customModule="wb" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Gg-qc-Rwa">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="6Gg-qc-Rwa" secondAttribute="trailing" id="Oeq-Ex-dXl"/>
+                                                        <constraint firstItem="6Gg-qc-Rwa" firstAttribute="leading" secondItem="WRN-ot-AnZ" secondAttribute="leading" id="ZXk-lG-8kp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="6Gg-qc-Rwa" secondAttribute="bottom" id="Zdb-0N-wo7"/>
+                                                        <constraint firstItem="6Gg-qc-Rwa" firstAttribute="top" secondItem="WRN-ot-AnZ" secondAttribute="top" id="li5-Ln-yvc"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="picImgView" destination="6Gg-qc-Rwa" id="hX3-Du-Ktj"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="MGG-UN-OH9" firstAttribute="leading" secondItem="ux2-sn-bQF" secondAttribute="trailing" constant="10" id="1W7-ar-4Jb"/>
-                                        <constraint firstItem="ajP-I6-vz6" firstAttribute="top" secondItem="epc-ED-YAs" secondAttribute="bottom" constant="10" id="35B-TJ-rMb"/>
                                         <constraint firstItem="ux2-sn-bQF" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="trailing" constant="10" id="A82-dY-InL"/>
+                                        <constraint firstItem="ajP-I6-vz6" firstAttribute="top" secondItem="CGc-ML-tmU" secondAttribute="bottom" priority="900" constant="10" id="AfK-wI-SyU"/>
                                         <constraint firstItem="pGr-lN-qBI" firstAttribute="bottom" secondItem="30A-Z4-sZr" secondAttribute="bottom" id="HeP-KD-h8j"/>
                                         <constraint firstItem="2vB-dS-Gdg" firstAttribute="leading" secondItem="ux2-sn-bQF" secondAttribute="leading" id="YI4-pw-4wV"/>
                                         <constraint firstItem="30A-Z4-sZr" firstAttribute="top" secondItem="hoV-6K-jsN" secondAttribute="top" constant="10" id="Ymb-Fu-TFO"/>
                                         <constraint firstItem="MGG-UN-OH9" firstAttribute="centerY" secondItem="ux2-sn-bQF" secondAttribute="centerY" id="dou-1h-bqz"/>
+                                        <constraint firstItem="CGc-ML-tmU" firstAttribute="top" secondItem="epc-ED-YAs" secondAttribute="bottom" constant="10" id="eKY-mt-FV9"/>
                                         <constraint firstItem="pGr-lN-qBI" firstAttribute="trailing" secondItem="30A-Z4-sZr" secondAttribute="trailing" id="hWl-wU-4OG"/>
                                         <constraint firstAttribute="trailing" secondItem="ajP-I6-vz6" secondAttribute="trailing" id="iYF-qd-2BX"/>
                                         <constraint firstItem="30A-Z4-sZr" firstAttribute="leading" secondItem="hoV-6K-jsN" secondAttribute="leading" constant="10" id="itd-bi-Tdd"/>
                                         <constraint firstItem="ux2-sn-bQF" firstAttribute="top" secondItem="30A-Z4-sZr" secondAttribute="top" id="jde-V7-w0c"/>
                                         <constraint firstItem="epc-ED-YAs" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="leading" id="kBH-hq-HbX"/>
                                         <constraint firstItem="D6K-dz-7A3" firstAttribute="bottom" secondItem="2vB-dS-Gdg" secondAttribute="bottom" id="qx2-Yy-d8a"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="epc-ED-YAs" secondAttribute="trailing" constant="20" symbolic="YES" id="tuk-39-b9b"/>
+                                        <constraint firstItem="CGc-ML-tmU" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="leading" id="tB8-r3-00z"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="epc-ED-YAs" secondAttribute="trailing" constant="10" id="tuk-39-b9b"/>
                                         <constraint firstItem="D6K-dz-7A3" firstAttribute="leading" secondItem="2vB-dS-Gdg" secondAttribute="trailing" constant="10" id="u6L-HK-TKg"/>
                                         <constraint firstItem="2vB-dS-Gdg" firstAttribute="bottom" secondItem="30A-Z4-sZr" secondAttribute="bottom" id="uGf-Qb-iUk"/>
                                         <constraint firstItem="ajP-I6-vz6" firstAttribute="leading" secondItem="hoV-6K-jsN" secondAttribute="leading" id="vez-Kj-C8i"/>
                                         <constraint firstAttribute="bottom" secondItem="ajP-I6-vz6" secondAttribute="bottom" id="w5s-Y8-YlO"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D6K-dz-7A3" secondAttribute="trailing" constant="20" symbolic="YES" id="wYn-KX-1K4"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D6K-dz-7A3" secondAttribute="trailing" constant="10" id="wYn-KX-1K4"/>
                                         <constraint firstItem="epc-ED-YAs" firstAttribute="top" secondItem="30A-Z4-sZr" secondAttribute="bottom" constant="10" id="y2P-s2-TzB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="contentLabel" destination="epc-ED-YAs" id="HaN-eF-AMW"/>
+                                    <outlet property="picCollectionHeightCons" destination="eQ2-uI-Tuf" id="O7e-tH-Vb0"/>
+                                    <outlet property="picCollectionView" destination="CGc-ML-tmU" id="g7w-lu-7eA"/>
+                                    <outlet property="picCollectionWidthCons" destination="P03-5m-abP" id="ZO2-nu-YxL"/>
                                     <outlet property="profileImgView" destination="30A-Z4-sZr" id="v7A-DR-2xf"/>
                                     <outlet property="screenNameLabel" destination="ux2-sn-bQF" id="LfO-ub-lp9"/>
                                     <outlet property="sourceLabel" destination="D6K-dz-7A3" id="J2P-nv-EWs"/>
-                                    <outlet property="textLabelWidthConstraint" destination="Ssf-hw-5wn" id="kIj-yb-gsY"/>
                                     <outlet property="timeLabel" destination="2vB-dS-Gdg" id="Gmo-Nc-9Il"/>
                                     <outlet property="verifiedImgView" destination="pGr-lN-qBI" id="4Ge-0H-iWc"/>
                                     <outlet property="vipImgView" destination="MGG-UN-OH9" id="TYf-zR-HFY"/>

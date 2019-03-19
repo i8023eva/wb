@@ -17,6 +17,8 @@ class StatusSession: NSObject {
     var createdAtReplace: String?
     /// 微博来源替换属性
     var sourceReplace: String?
+    /// 微博配图替换属性
+    var picURLsReplace: [URL] = [URL]()
     
     /// 微博认证替换属性
     var verifiedTypeReplace: UIImage?
@@ -39,6 +41,14 @@ class StatusSession: NSObject {
             let length = (source as NSString).range(of: "</").location - startIndex
             
             sourceReplace = (source as NSString).substring(with: NSRange(location: startIndex, length: length))
+        }
+        
+        if let picURLsArr = status.pic_urls {
+            for picURLDict in picURLsArr {
+                guard let picURLString = picURLDict["thumbnail_pic"] else {continue}
+                
+                picURLsReplace.append(URL(string: picURLString)!)
+            }
         }
         
         let verifiedType = status.user?.verified_type ?? -1
