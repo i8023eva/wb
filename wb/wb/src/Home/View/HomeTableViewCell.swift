@@ -23,6 +23,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var picCollectionView: PicCollectionView!
     @IBOutlet weak var retweetedLabel: UILabel!
     @IBOutlet weak var retweetedBackView: UIView!
+    @IBOutlet weak var toolBar: UIView!
     
 //    @IBOutlet weak var textLabelWidthConstraint: NSLayoutConstraint!
     ///
@@ -79,6 +80,12 @@ class HomeTableViewCell: UITableViewCell {
                 retweetedBackView.isHidden = true
                 
                 retLabelTopCons.constant = 0
+            }
+            // 避免z重复赋值
+            if statusSession.cellHight == 0 {
+                // 强制布局
+                layoutIfNeeded()
+                statusSession.cellHight = toolBar.frame.maxY
             }
         }
     }

@@ -31,8 +31,8 @@ class HomeTableViewController: BaseTableViewController {
         
         loadHomeInfo()
         
+//        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableView.automaticDimension
     }
     
 
@@ -91,6 +91,10 @@ extension HomeTableViewController{
         cell.statusSession = statusSessionArr[indexPath.row]
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return statusSessionArr[indexPath.row].cellHight
     }
 }
 // MARK: -  navigationItem

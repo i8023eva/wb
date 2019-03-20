@@ -12,7 +12,7 @@ import UIKit
 class StatusSession: NSObject {
 
     var status: Status?
-    
+    // 不设置 toolbar 下边距， 自己计算高度
     var cellHight: CGFloat = 0
     
     
