@@ -8,10 +8,13 @@
 
 import UIKit
 
-/// Status 管理
+/// Status 数据管理
 class StatusSession: NSObject {
 
     var status: Status?
+    
+    var cellHight: CGFloat = 0
+    
     
     /// 微博创建时间替换属性
     var createdAtReplace: String?
@@ -43,7 +46,9 @@ class StatusSession: NSObject {
             sourceReplace = (source as NSString).substring(with: NSRange(location: startIndex, length: length))
         }
         
-        if let picURLsArr = status.pic_urls {
+//        status.pic_urls?.count == 0   status.retweeted_status != nil
+        let picURLsArr = status.pic_urls?.count == 0 ? status.retweeted_status?.pic_urls : status.pic_urls
+        if let picURLsArr = picURLsArr {
             for picURLDict in picURLsArr {
                 guard let picURLString = picURLDict["thumbnail_pic"] else {continue}
                 

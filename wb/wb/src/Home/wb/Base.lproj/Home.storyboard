@@ -71,55 +71,26 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容内容内容内容内容内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epc-ED-YAs">
-                                            <rect key="frame" x="10" y="60" width="147.5" height="14"/>
+                                            <rect key="frame" x="10" y="60" width="147.5" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajP-I6-vz6" userLabel="toolbar">
-                                            <rect key="frame" x="0.0" y="296" width="375" height="40"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-e0-9PL">
-                                                    <rect key="frame" x="0.0" y="1" width="375" height="34"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj3-SJ-gbC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="转发" image="timeline_icon_retweet">
-                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2l-IJ-gmv">
-                                                            <rect key="frame" x="125" y="0.0" width="125" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="评论" image="timeline_icon_comment">
-                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5e-O5-T8C">
-                                                            <rect key="frame" x="250.5" y="0.0" width="124.5" height="34"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="赞" image="timeline_icon_unlike">
-                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </stackView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Pne-e0-9PL" secondAttribute="bottom" constant="5" id="9di-uU-hMb"/>
-                                                <constraint firstItem="Pne-e0-9PL" firstAttribute="top" secondItem="ajP-I6-vz6" secondAttribute="top" constant="1" id="MRN-Cv-zXY"/>
-                                                <constraint firstAttribute="trailing" secondItem="Pne-e0-9PL" secondAttribute="trailing" id="Wf0-Uc-6dD"/>
-                                                <constraint firstAttribute="height" constant="40" id="jcr-3O-HcA"/>
-                                                <constraint firstItem="Pne-e0-9PL" firstAttribute="leading" secondItem="ajP-I6-vz6" secondAttribute="leading" id="piD-Pw-TjM"/>
-                                            </constraints>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaT-aL-UgE" userLabel="backgroundcolor">
+                                            <rect key="frame" x="0.0" y="84.5" width="375" height="211.5"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="转发内容转发内容转发内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOz-Di-Dh4">
+                                            <rect key="frame" x="10" y="89.5" width="147.5" height="97.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CGc-ML-tmU" customClass="PicCollectionView" customModule="wb" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="84" width="240" height="202"/>
+                                            <rect key="frame" x="10" y="197" width="240" height="89"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="P03-5m-abP"/>
-                                                <constraint firstAttribute="height" constant="202" id="eQ2-uI-Tuf"/>
+                                                <constraint firstAttribute="height" constant="89" id="eQ2-uI-Tuf"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Grz-yn-dGC">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -140,6 +111,7 @@
                                                             </imageView>
                                                         </subviews>
                                                     </view>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="6Gg-qc-Rwa" secondAttribute="trailing" id="Oeq-Ex-dXl"/>
                                                         <constraint firstItem="6Gg-qc-Rwa" firstAttribute="leading" secondItem="WRN-ot-AnZ" secondAttribute="leading" id="ZXk-lG-8kp"/>
@@ -152,22 +124,75 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajP-I6-vz6" userLabel="toolbar">
+                                            <rect key="frame" x="0.0" y="296" width="375" height="40"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-e0-9PL">
+                                                    <rect key="frame" x="0.0" y="1" width="375" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj3-SJ-gbC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="34"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                                            <state key="normal" title="转发" image="timeline_icon_retweet">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2l-IJ-gmv">
+                                                            <rect key="frame" x="125" y="0.0" width="125" height="34"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                                            <state key="normal" title="评论" image="timeline_icon_comment">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5e-O5-T8C">
+                                                            <rect key="frame" x="250.5" y="0.0" width="124.5" height="34"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                                            <state key="normal" title="赞" image="timeline_icon_unlike">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Pne-e0-9PL" secondAttribute="bottom" constant="5" id="9di-uU-hMb"/>
+                                                <constraint firstItem="Pne-e0-9PL" firstAttribute="top" secondItem="ajP-I6-vz6" secondAttribute="top" constant="1" id="MRN-Cv-zXY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pne-e0-9PL" secondAttribute="trailing" id="Wf0-Uc-6dD"/>
+                                                <constraint firstAttribute="height" constant="40" id="jcr-3O-HcA"/>
+                                                <constraint firstItem="Pne-e0-9PL" firstAttribute="leading" secondItem="ajP-I6-vz6" secondAttribute="leading" id="piD-Pw-TjM"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="MGG-UN-OH9" firstAttribute="leading" secondItem="ux2-sn-bQF" secondAttribute="trailing" constant="10" id="1W7-ar-4Jb"/>
+                                        <constraint firstItem="JaT-aL-UgE" firstAttribute="top" secondItem="epc-ED-YAs" secondAttribute="bottom" constant="10" id="2LM-Sp-bj0"/>
+                                        <constraint firstItem="CGc-ML-tmU" firstAttribute="top" secondItem="dOz-Di-Dh4" secondAttribute="bottom" constant="10" id="8Po-XR-kkl"/>
+                                        <constraint firstItem="ajP-I6-vz6" firstAttribute="top" secondItem="CGc-ML-tmU" secondAttribute="bottom" priority="900" constant="10" id="9ZR-EV-b7I"/>
                                         <constraint firstItem="ux2-sn-bQF" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="trailing" constant="10" id="A82-dY-InL"/>
-                                        <constraint firstItem="ajP-I6-vz6" firstAttribute="top" secondItem="CGc-ML-tmU" secondAttribute="bottom" priority="900" constant="10" id="AfK-wI-SyU"/>
                                         <constraint firstItem="pGr-lN-qBI" firstAttribute="bottom" secondItem="30A-Z4-sZr" secondAttribute="bottom" id="HeP-KD-h8j"/>
+                                        <constraint firstItem="dOz-Di-Dh4" firstAttribute="top" secondItem="epc-ED-YAs" secondAttribute="bottom" constant="15" id="O46-2R-i5j"/>
+                                        <constraint firstAttribute="trailing" secondItem="JaT-aL-UgE" secondAttribute="trailing" id="X77-8P-Thh"/>
+                                        <constraint firstItem="JaT-aL-UgE" firstAttribute="leading" secondItem="hoV-6K-jsN" secondAttribute="leading" id="XTs-l0-exa"/>
                                         <constraint firstItem="2vB-dS-Gdg" firstAttribute="leading" secondItem="ux2-sn-bQF" secondAttribute="leading" id="YI4-pw-4wV"/>
                                         <constraint firstItem="30A-Z4-sZr" firstAttribute="top" secondItem="hoV-6K-jsN" secondAttribute="top" constant="10" id="Ymb-Fu-TFO"/>
                                         <constraint firstItem="MGG-UN-OH9" firstAttribute="centerY" secondItem="ux2-sn-bQF" secondAttribute="centerY" id="dou-1h-bqz"/>
-                                        <constraint firstItem="CGc-ML-tmU" firstAttribute="top" secondItem="epc-ED-YAs" secondAttribute="bottom" constant="10" id="eKY-mt-FV9"/>
                                         <constraint firstItem="pGr-lN-qBI" firstAttribute="trailing" secondItem="30A-Z4-sZr" secondAttribute="trailing" id="hWl-wU-4OG"/>
                                         <constraint firstAttribute="trailing" secondItem="ajP-I6-vz6" secondAttribute="trailing" id="iYF-qd-2BX"/>
                                         <constraint firstItem="30A-Z4-sZr" firstAttribute="leading" secondItem="hoV-6K-jsN" secondAttribute="leading" constant="10" id="itd-bi-Tdd"/>
                                         <constraint firstItem="ux2-sn-bQF" firstAttribute="top" secondItem="30A-Z4-sZr" secondAttribute="top" id="jde-V7-w0c"/>
                                         <constraint firstItem="epc-ED-YAs" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="leading" id="kBH-hq-HbX"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dOz-Di-Dh4" secondAttribute="trailing" constant="10" id="l2u-bf-KLQ"/>
+                                        <constraint firstItem="dOz-Di-Dh4" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="leading" id="mZa-8f-H1p"/>
                                         <constraint firstItem="D6K-dz-7A3" firstAttribute="bottom" secondItem="2vB-dS-Gdg" secondAttribute="bottom" id="qx2-Yy-d8a"/>
+                                        <constraint firstItem="ajP-I6-vz6" firstAttribute="top" secondItem="JaT-aL-UgE" secondAttribute="bottom" id="rhv-5H-J55"/>
                                         <constraint firstItem="CGc-ML-tmU" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="leading" id="tB8-r3-00z"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="epc-ED-YAs" secondAttribute="trailing" constant="10" id="tuk-39-b9b"/>
                                         <constraint firstItem="D6K-dz-7A3" firstAttribute="leading" secondItem="2vB-dS-Gdg" secondAttribute="trailing" constant="10" id="u6L-HK-TKg"/>
@@ -185,9 +210,13 @@
                                     <outlet property="picCollectionView" destination="CGc-ML-tmU" id="g7w-lu-7eA"/>
                                     <outlet property="picCollectionWidthCons" destination="P03-5m-abP" id="ZO2-nu-YxL"/>
                                     <outlet property="profileImgView" destination="30A-Z4-sZr" id="v7A-DR-2xf"/>
+                                    <outlet property="retLabelTopCons" destination="O46-2R-i5j" id="w4n-jr-5u4"/>
+                                    <outlet property="retweetedBackView" destination="JaT-aL-UgE" id="zOI-b5-gwH"/>
+                                    <outlet property="retweetedLabel" destination="dOz-Di-Dh4" id="kfR-us-pTM"/>
                                     <outlet property="screenNameLabel" destination="ux2-sn-bQF" id="LfO-ub-lp9"/>
                                     <outlet property="sourceLabel" destination="D6K-dz-7A3" id="J2P-nv-EWs"/>
                                     <outlet property="timeLabel" destination="2vB-dS-Gdg" id="Gmo-Nc-9Il"/>
+                                    <outlet property="toolBarTopCons" destination="9ZR-EV-b7I" id="2zM-SJ-fbK"/>
                                     <outlet property="verifiedImgView" destination="pGr-lN-qBI" id="4Ge-0H-iWc"/>
                                     <outlet property="vipImgView" destination="MGG-UN-OH9" id="TYf-zR-HFY"/>
                                 </connections>

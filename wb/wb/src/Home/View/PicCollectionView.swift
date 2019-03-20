@@ -15,7 +15,7 @@ class PicCollectionView: UICollectionView {
         
         dataSource = self
     }
-    
+    /// 配图 URL
     var picURLArr: [URL] = [URL]() {
         didSet {
             self.reloadData()

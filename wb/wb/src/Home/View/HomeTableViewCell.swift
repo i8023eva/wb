@@ -21,11 +21,19 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var vipImgView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var picCollectionView: PicCollectionView!
+    @IBOutlet weak var retweetedLabel: UILabel!
+    @IBOutlet weak var retweetedBackView: UIView!
     
 //    @IBOutlet weak var textLabelWidthConstraint: NSLayoutConstraint!
     ///
     @IBOutlet weak var picCollectionWidthCons: NSLayoutConstraint!
     @IBOutlet weak var picCollectionHeightCons: NSLayoutConstraint!
+    /// 没有转发的约束调整
+    @IBOutlet weak var retLabelTopCons: NSLayoutConstraint!
+    // 没有配图
+    @IBOutlet weak var toolBarTopCons: NSLayoutConstraint!
+    
+    
     
     /// item 宽高
     let collectionCellHW: CGFloat = (UIScreen.main.bounds.width - 4 * margin) / 3
@@ -55,6 +63,23 @@ class HomeTableViewCell: UITableViewCell {
             picCollectionHeightCons.constant = collectionSize.height
             
             picCollectionView.picURLArr = statusSession.picURLsReplace
+
+            //             转发
+            if statusSession.status?.retweeted_status != nil {
+                if let screenName = statusSession.status?.retweeted_status?.user?.screen_name,
+                   let retweetedText = statusSession.status?.retweeted_status?.text {
+                    retweetedLabel.text = "@" + "\(screenName)：" + retweetedText
+                    
+                    retLabelTopCons.constant = 15
+                }
+                retweetedBackView.isHidden = false
+            } else {
+                // 防止循环利用
+                retweetedLabel.text = nil
+                retweetedBackView.isHidden = true
+                
+                retLabelTopCons.constant = 0
+            }
         }
     }
     
@@ -86,21 +111,24 @@ extension HomeTableViewCell {
         
         // 0
         if count == 0 {
+            toolBarTopCons.constant = 0
             return CGSize.zero
         }
+        toolBarTopCons.constant = 10
         
         // 1  单张配图新浪没有给具体的大小，等比例显示就先下载
         let layout = picCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
         if count == 1 {
             let URLString = statusSession?.picURLsReplace.first?.absoluteString
+            // FIXME: gif没缓存  取不到值  数据少 下次发现  约束问题
             // MemoryCache 没取到值
             if let URLImage = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: URLString) {
                 layout.itemSize = CGSize(width: URLImage.size.width, height: URLImage.size.height)
                 
                 return CGSize(width: URLImage.size.width, height: URLImage.size.height)
             }
-            return CGSize.zero
+//            return CGSize.zero
         }
         
         layout.itemSize = CGSize(width: collectionCellHW, height: collectionCellHW)
