@@ -6,8 +6,7 @@
 //  Copyright © 2019年 李元华. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 /// 申请应用时分配的AppKey
 let client_id: String = "4023078902"
@@ -22,6 +21,8 @@ let grant_type: String = "authorization_code"
 let DocumentPath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 ///
 let userInfo: String = "UserInfo.plist"
+
+let navHeight: CGFloat = 44
 
 extension Selector {
     

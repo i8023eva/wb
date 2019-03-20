@@ -76,17 +76,17 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaT-aL-UgE" userLabel="backgroundcolor">
-                                            <rect key="frame" x="0.0" y="84.5" width="375" height="128.5"/>
+                                            <rect key="frame" x="0.0" y="84.5" width="375" height="211.5"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转发内容转发内容转发内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOz-Di-Dh4">
-                                            <rect key="frame" x="10" y="89.5" width="147.5" height="14.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="转发内容转发内容转发内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOz-Di-Dh4">
+                                            <rect key="frame" x="10" y="89.5" width="147.5" height="97.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CGc-ML-tmU" customClass="PicCollectionView" customModule="wb" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="114" width="240" height="89"/>
+                                            <rect key="frame" x="10" y="197" width="240" height="89"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="P03-5m-abP"/>
@@ -125,7 +125,7 @@
                                             </cells>
                                         </collectionView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajP-I6-vz6" userLabel="toolbar">
-                                            <rect key="frame" x="0.0" y="213" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="296" width="375" height="40"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-e0-9PL">
                                                     <rect key="frame" x="0.0" y="1" width="375" height="34"/>
@@ -175,6 +175,7 @@
                                         <constraint firstItem="MGG-UN-OH9" firstAttribute="leading" secondItem="ux2-sn-bQF" secondAttribute="trailing" constant="10" id="1W7-ar-4Jb"/>
                                         <constraint firstItem="JaT-aL-UgE" firstAttribute="top" secondItem="epc-ED-YAs" secondAttribute="bottom" constant="10" id="2LM-Sp-bj0"/>
                                         <constraint firstItem="CGc-ML-tmU" firstAttribute="top" secondItem="dOz-Di-Dh4" secondAttribute="bottom" constant="10" id="8Po-XR-kkl"/>
+                                        <constraint firstAttribute="bottom" secondItem="ajP-I6-vz6" secondAttribute="bottom" id="8Vh-zb-0kg"/>
                                         <constraint firstItem="ajP-I6-vz6" firstAttribute="top" secondItem="CGc-ML-tmU" secondAttribute="bottom" priority="900" constant="10" id="9ZR-EV-b7I"/>
                                         <constraint firstItem="ux2-sn-bQF" firstAttribute="leading" secondItem="30A-Z4-sZr" secondAttribute="trailing" constant="10" id="A82-dY-InL"/>
                                         <constraint firstItem="pGr-lN-qBI" firstAttribute="bottom" secondItem="30A-Z4-sZr" secondAttribute="bottom" id="HeP-KD-h8j"/>

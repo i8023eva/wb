@@ -85,12 +85,19 @@ extension NetworkingManager {
             completion(data as? [String : AnyObject], error)
         }
     }
-    
-    /// 获取当前登录用户及其所关注（授权）用户的最新微博
-    func loadHomeInfo(completion: @escaping (_ data: [[String : AnyObject]]?,_ error: Error?) -> ()) {
+//https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/index.html
+    /**
+     获取当前登录用户及其所关注（授权）用户的最新微博
+     
+     - Parameter sinceID: 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+     - Parameter maxID: 若指定此参数，则返回小于或**等于**max_id的微博，默认为0。
+     */
+    func loadHomeInfo(sinceID: Int, maxID: Int, completion: @escaping (_ data: [[String : AnyObject]]?,_ error: Error?) -> ()) {
         
         let parameters = [
-            "access_token" : UserSession.shared.user?.access_token
+            "access_token" : UserSession.shared.user?.access_token,
+            "since_id" : "\(sinceID)",
+            "max_id" : "\(maxID)"
         ]
         
         NetworkingManager.shared.request(requestType: .GET, URLString: "https://api.weibo.com/2/statuses/home_timeline.json", parameters: parameters as [String : AnyObject]) { (data, error) in

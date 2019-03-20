@@ -82,11 +82,11 @@ class HomeTableViewCell: UITableViewCell {
                 retLabelTopCons.constant = 0
             }
             // 避免z重复赋值
-            if statusSession.cellHight == 0 {
-                // 强制布局
-                layoutIfNeeded()
-                statusSession.cellHight = toolBar.frame.maxY
-            }
+//            if statusSession.cellHight == 0 {
+//                // 强制布局
+//                layoutIfNeeded()
+//                statusSession.cellHight = toolBar.frame.maxY
+//            }
         }
     }
     

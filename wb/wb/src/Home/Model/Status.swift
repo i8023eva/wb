@@ -18,7 +18,7 @@ class Status: NSObject {
     /// 微博来源   <a href="http://weibo.com/" rel="nofollow">小南的iPhone客户端</a>
     @objc var source: String? 
     /// 微博MID
-    @objc var mid: Int64 = 0
+    @objc var mid: Int = 0
     /// 微博作者的用户信息字段
     @objc var user: User?
     /// 微博配图

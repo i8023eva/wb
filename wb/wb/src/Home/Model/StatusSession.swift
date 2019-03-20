@@ -12,8 +12,8 @@ import UIKit
 class StatusSession: NSObject {
 
     var status: Status?
-    // 不设置 toolbar 下边距， 自己计算高度
-    var cellHight: CGFloat = 0
+    // 不设置 toolbar 下边距， 自己计算高度   ;2. 从上到下设置好约束 Content Hugging Priority
+//    var cellHight: CGFloat = 0
     
     
     /// 微博创建时间替换属性
