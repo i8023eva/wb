@@ -23,7 +23,6 @@ class HomeTableViewController: BaseTableViewController {
     
     private lazy var tipLabel: UILabel  = {
         let label = UILabel()
-        print(navHeight)
         label.frame = CGRect(x: 0, y: navHeight - 44, width: UIScreen.main.bounds.width, height: 44)
         label.backgroundColor = UIColor.orange
         label.textColor = UIColor.white

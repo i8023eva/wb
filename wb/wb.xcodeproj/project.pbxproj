@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1412F1EB22436FF8005092BA /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412F1E922436FF8005092BA /* PublishViewController.swift */; };
+		1412F1EC22436FF8005092BA /* PublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1412F1EA22436FF8005092BA /* PublishViewController.xib */; };
+		1412F1EF224372F8005092BA /* PublishTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412F1EE224372F8005092BA /* PublishTitleView.swift */; };
+		1412F1F322437B8C005092BA /* PublishTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412F1F222437B8C005092BA /* PublishTextView.swift */; };
 		142C3C44222FC2AA0070EE5B /* AnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C3C43222FC2AA0070EE5B /* AnimatedTransition.swift */; };
 		142F8D29222BA7EB00C01EA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F8D28222BA7EB00C01EA1 /* AppDelegate.swift */; };
 		142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2C222BA7EB00C01EA1 /* Main.storyboard */; };
@@ -49,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1412F1E922436FF8005092BA /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
+		1412F1EA22436FF8005092BA /* PublishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublishViewController.xib; sourceTree = "<group>"; };
+		1412F1EE224372F8005092BA /* PublishTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishTitleView.swift; sourceTree = "<group>"; };
+		1412F1F222437B8C005092BA /* PublishTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishTextView.swift; sourceTree = "<group>"; };
 		142C3C43222FC2AA0070EE5B /* AnimatedTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransition.swift; sourceTree = "<group>"; };
 		142F8D25222BA7EB00C01EA1 /* wb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142F8D28222BA7EB00C01EA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1412F1E822436FBD005092BA /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				1412F1ED224372DB005092BA /* View */,
+				1412F1E922436FF8005092BA /* PublishViewController.swift */,
+				1412F1EA22436FF8005092BA /* PublishViewController.xib */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		1412F1ED224372DB005092BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1412F1EE224372F8005092BA /* PublishTitleView.swift */,
+				1412F1F222437B8C005092BA /* PublishTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		142F8D1C222BA7EB00C01EA1 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +169,7 @@
 			children = (
 				142F8D3F222BAEB900C01EA1 /* Main */,
 				142F8D3B222BAEB900C01EA1 /* Home */,
+				1412F1E822436FBD005092BA /* Publish */,
 				142F8D3D222BAEB900C01EA1 /* Message */,
 				142F8D3C222BAEB900C01EA1 /* Discover */,
 				142F8D3E222BAEB900C01EA1 /* Profile */,
@@ -367,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1412F1EC22436FF8005092BA /* PublishViewController.xib in Resources */,
 				1490263B22313EAA00B0EEC9 /* OAuthViewController.xib in Resources */,
 				142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */,
 				142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */,
@@ -447,7 +476,10 @@
 				142C3C44222FC2AA0070EE5B /* AnimatedTransition.swift in Sources */,
 				14C0A12F223E7350004B9337 /* DateEx.swift in Sources */,
 				14776C17223F586600EDF619 /* HomeTableViewCell.swift in Sources */,
+				1412F1EB22436FF8005092BA /* PublishViewController.swift in Sources */,
+				1412F1EF224372F8005092BA /* PublishTitleView.swift in Sources */,
 				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
+				1412F1F322437B8C005092BA /* PublishTextView.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
 				1465A5282234F7D000BB2251 /* UserSession.swift in Sources */,
 				149B470C222E613B00ED8D72 /* TitleButton.swift in Sources */,
@@ -628,7 +660,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -646,7 +681,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

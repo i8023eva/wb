@@ -25,7 +25,9 @@ class MainViewController: UITabBarController {
     }
     
     @objc private func publishBtnClick() {
-        print(#line)
+        let publishNav = UINavigationController(rootViewController: PublishViewController())
+        publishNav.modalPresentationStyle = UIModalPresentationStyle.currentContext
+        present(publishNav, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
