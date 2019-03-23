@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-private let margin: CGFloat = 10.0
+private let margin: Int = 10
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -37,7 +37,7 @@ class HomeTableViewCell: UITableViewCell {
     
     
     /// item 宽高
-    let collectionCellHW: CGFloat = (UIScreen.main.bounds.width - 4 * margin) / 3
+    let collectionCellHW: Int = (Int(UIScreen.main.bounds.width) - 4 * margin) / 3
     
     
     var statusSession: StatusSession? {
@@ -147,11 +147,12 @@ extension HomeTableViewCell {
         }
         
         // n
-        let rows = CGFloat((count - 1) / 3 + 1)
-        
+        let rows = (count - 1) / 3 + 1
+        print(rows)
         let collectionH = collectionCellHW * rows + margin * (rows - 1)
-        let collectionW = UIScreen.main.bounds.width - margin * 2
-        
+        let collectionW = Int(UIScreen.main.bounds.width) - margin * 2
+        print(collectionW)
+        print(collectionCellHW)
         return CGSize(width: collectionW, height: collectionH)
     }
 }

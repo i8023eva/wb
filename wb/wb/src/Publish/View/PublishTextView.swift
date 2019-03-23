@@ -9,8 +9,8 @@
 import UIKit
 
 class PublishTextView: UITextView {
-
-    private lazy var placeHolderLabel: UILabel = UILabel()
+    /// 占位 label
+    lazy var placeHolderLabel: UILabel = UILabel()
     
     // 与 xib 相关联的类添加子控件 coder
     required init?(coder aDecoder: NSCoder) {

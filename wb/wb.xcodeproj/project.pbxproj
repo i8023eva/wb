@@ -16,6 +16,7 @@
 		142F8D2E222BA7EB00C01EA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2C222BA7EB00C01EA1 /* Main.storyboard */; };
 		142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */; };
 		142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */; };
+		1452ABA92245E08300786EE1 /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452ABA82245E08300786EE1 /* PicPickerCollectionView.swift */; };
 		1465A5282234F7D000BB2251 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A5272234F7D000BB2251 /* UserSession.swift */; };
 		1465A52C223533B100BB2251 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A52A223533B100BB2251 /* WelcomeViewController.swift */; };
 		1465A52D223533B100BB2251 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465A52B223533B100BB2251 /* WelcomeViewController.xib */; };
@@ -64,6 +65,7 @@
 		142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142F8D32222BA7EC00C01EA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		142F8D34222BA7EC00C01EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1452ABA82245E08300786EE1 /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
 		1465A5272234F7D000BB2251 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		1465A52A223533B100BB2251 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1465A52B223533B100BB2251 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				1412F1EE224372F8005092BA /* PublishTitleView.swift */,
 				1412F1F222437B8C005092BA /* PublishTextView.swift */,
+				1452ABA82245E08300786EE1 /* PicPickerCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				14776C17223F586600EDF619 /* HomeTableViewCell.swift in Sources */,
 				1412F1EB22436FF8005092BA /* PublishViewController.swift in Sources */,
 				1412F1EF224372F8005092BA /* PublishTitleView.swift in Sources */,
+				1452ABA92245E08300786EE1 /* PicPickerCollectionView.swift in Sources */,
 				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
 				1412F1F322437B8C005092BA /* PublishTextView.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
