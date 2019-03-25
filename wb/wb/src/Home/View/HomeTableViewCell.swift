@@ -148,11 +148,11 @@ extension HomeTableViewCell {
         
         // n
         let rows = (count - 1) / 3 + 1
-        print(rows)
+//        print(rows)
         let collectionH = collectionCellHW * rows + margin * (rows - 1)
         let collectionW = Int(UIScreen.main.bounds.width) - margin * 2
-        print(collectionW)
-        print(collectionCellHW)
+//        print(collectionW)
+//        print(collectionCellHW)
         return CGSize(width: collectionW, height: collectionH)
     }
 }

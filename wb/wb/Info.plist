@@ -7,7 +7,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>1</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>1</string>
+	<string>访问照片库的权限</string>
 	<key>NSCameraUsageDescription</key>
 	<string>1</string>
 	<key>CFBundleDevelopmentRegion</key>

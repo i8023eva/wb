@@ -11,18 +11,21 @@ import UIKit
 class PublishViewController: UIViewController {
     
     @IBOutlet weak var publishTextView: PublishTextView!
+    @IBOutlet weak var picPickerCollectionView: PicPickerCollectionView!
     
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var picPickerViewHeight: NSLayoutConstraint!
     
     private lazy var titleView: PublishTitleView = PublishTitleView()
+    private lazy var pickImagesArr: [UIImage] = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNav()
         
-//        键盘弹出通知
-        NotificationCenter.default.addObserver(self, selector: #selector(PublishViewController.keyboardWillChangeFrame(note:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        addNotification()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,11 +37,63 @@ class PublishViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+
+}
+
+// MARK: - toolBar click
+extension PublishViewController {
+    /// 弹出图片选择
+    @IBAction func picBtnClick(_ sender: Any) {
+        publishTextView.resignFirstResponder()
+        
+        picPickerViewHeight.constant = UIScreen.main.bounds.height * 0.62
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
 }
 
 // MARK: - NotificationCenter
 extension PublishViewController {
     
+    private func addNotification() {
+        //        键盘弹出通知
+        NotificationCenter.default.addObserver(self, selector: #selector(PublishViewController.keyboardWillChangeFrame(note:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        // 图片选择点击
+        NotificationCenter.default.addObserver(self, selector: #selector(PublishViewController.picPickerCellAdd), name: PicPickerCellAddNotification, object: nil)
+        
+        // 图片删除点击
+        NotificationCenter.default.addObserver(self, selector: #selector(PublishViewController.picPickerCellRemove(note:)), name: PicPickerCellRemoveNotification, object: nil)
+    }
+    // index cell 的图片
+    @objc private func picPickerCellRemove(note: Notification) {
+        
+        guard let image = note.object as? UIImage else {return}
+        
+        guard let index = pickImagesArr.firstIndex(of: image) else {return}
+        
+        pickImagesArr.remove(at: index)
+        
+        picPickerCollectionView.pickImagesArr = pickImagesArr
+    }
+    // 获取图片库
+    @objc private func picPickerCellAdd() {
+//        判断数据源
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) { return }
+        
+        let imgPicker = UIImagePickerController()
+        
+        imgPicker.sourceType = .photoLibrary
+        
+        imgPicker.delegate = self
+        
+        present(imgPicker, animated: true, completion: nil)
+        
+    }
+    
+    /// toolBar 跟随键盘移动
     @objc private func keyboardWillChangeFrame(note: Notification) {
 //        UIKeyboardAnimationDurationUserInfoKey
 //        UIKeyboardFrameEndUserInfoKey
@@ -57,7 +112,6 @@ extension PublishViewController {
             } else {
                 toolBarBottomCons.constant = -distance
             }
-            
         } else {
             toolBarBottomCons.constant = -distance
         }
@@ -65,6 +119,23 @@ extension PublishViewController {
         UIView.animate(withDuration: duration) {
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension PublishViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    选择图片之后
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        pickImagesArr.append(image)
+        
+        picPickerCollectionView.pickImagesArr = pickImagesArr
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        publishTextView.resignFirstResponder()
     }
 }
 

@@ -17,6 +17,8 @@
 		142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D2F222BA7EC00C01EA1 /* Assets.xcassets */; };
 		142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142F8D31222BA7EC00C01EA1 /* LaunchScreen.storyboard */; };
 		1452ABA92245E08300786EE1 /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452ABA82245E08300786EE1 /* PicPickerCollectionView.swift */; };
+		1452ABAC22463D6400786EE1 /* PicPickerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452ABAA22463D6400786EE1 /* PicPickerCollectionCell.swift */; };
+		1452ABAD22463D6400786EE1 /* PicPickerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1452ABAB22463D6400786EE1 /* PicPickerCollectionCell.xib */; };
 		1465A5282234F7D000BB2251 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A5272234F7D000BB2251 /* UserSession.swift */; };
 		1465A52C223533B100BB2251 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A52A223533B100BB2251 /* WelcomeViewController.swift */; };
 		1465A52D223533B100BB2251 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465A52B223533B100BB2251 /* WelcomeViewController.xib */; };
@@ -131,7 +133,7 @@
 			children = (
 				1412F1EE224372F8005092BA /* PublishTitleView.swift */,
 				1412F1F222437B8C005092BA /* PublishTextView.swift */,
-				1452ABA82245E08300786EE1 /* PicPickerCollectionView.swift */,
+				1452ABAF22463D9E00786EE1 /* PicPickerCollectionView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,6 +231,16 @@
 				14CA7BE5222D455C00E6692E /* unlogin */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		1452ABAF22463D9E00786EE1 /* PicPickerCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1452ABA82245E08300786EE1 /* PicPickerCollectionView.swift */,
+				1452ABAA22463D6400786EE1 /* PicPickerCollectionCell.swift */,
+				1452ABAB22463D6400786EE1 /* PicPickerCollectionCell.xib */,
+			);
+			path = PicPickerCollectionView;
 			sourceTree = "<group>";
 		};
 		1465A5292235339100BB2251 /* Welcome */ = {
@@ -400,6 +412,7 @@
 			files = (
 				1412F1EC22436FF8005092BA /* PublishViewController.xib in Resources */,
 				1490263B22313EAA00B0EEC9 /* OAuthViewController.xib in Resources */,
+				1452ABAD22463D6400786EE1 /* PicPickerCollectionCell.xib in Resources */,
 				142F8D33222BA7EC00C01EA1 /* LaunchScreen.storyboard in Resources */,
 				142F8D30222BA7EC00C01EA1 /* Assets.xcassets in Resources */,
 				149B4711222E6D3900ED8D72 /* PopoverViewContoller.xib in Resources */,
@@ -497,6 +510,7 @@
 				149B4713222E9C6400ED8D72 /* EVAPresentationController.swift in Sources */,
 				142F8D29222BA7EB00C01EA1 /* AppDelegate.swift in Sources */,
 				14776C15223F54CB00EDF619 /* StatusSession.swift in Sources */,
+				1452ABAC22463D6400786EE1 /* PicPickerCollectionCell.swift in Sources */,
 				14776C13223F45D900EDF619 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
