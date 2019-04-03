@@ -18,6 +18,11 @@ class PublishViewController: UIViewController {
     
     private lazy var titleView: PublishTitleView = PublishTitleView()
     private lazy var pickImagesArr: [UIImage] = [UIImage]()
+    
+    private lazy var emoticonVC: EmoticonViewController = EmoticonViewController {[weak self] (emoticon) in
+        self?.publishTextView.insertEmoticonText(emoticon: emoticon)
+        self?.textViewDidChange(self!.publishTextView)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,7 @@ class PublishViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
+
 }
 
 // MARK: - toolBar click
@@ -51,7 +57,15 @@ extension PublishViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
+    /// 弹出表情键盘
+    @IBAction func emoticonBtnClick(_ sender: UIButton) {
+//        print(publishTextView.inputView)  nil  就是系统键盘
+        publishTextView.resignFirstResponder()
+        
+        publishTextView.inputView = publishTextView.inputView != nil ? nil : emoticonVC.view
+        
+        publishTextView.becomeFirstResponder()
+    }
 }
 
 // MARK: - NotificationCenter
@@ -169,7 +183,7 @@ extension PublishViewController {
     }
     
     @objc private func publishBtnClick() {
-        
+        print(publishTextView.getEmoticonText())
     }
 }
 
