@@ -18,7 +18,15 @@ class NetworkingManager: AFHTTPSessionManager {
     // 单例 let- 线程安全
     static let shared: NetworkingManager = {
         let manager = NetworkingManager()
+//        manager.responseSerializer = AFJSONResponseSerializer(readingOptions: JSONSerialization.ReadingOptions.allowFragments)
+//        manager.requestSerializer = AFJSONRequestSerializer(writingOptions: .prettyPrinted)
+        
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
+        manager.responseSerializer.acceptableContentTypes?.insert("multipart/form-data")
+        manager.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         return manager
     }()
 }
@@ -109,5 +117,49 @@ extension NetworkingManager {
             
             completion(dataDict["statuses"] as? [[String : AnyObject]], error)
         }
+    }
+}
+
+extension NetworkingManager {
+    /// 发布一条新微博
+    func updateStatus(statusText: String, completion: @escaping (_ isSuccess: Bool) -> ()) -> Void {
+        
+        let URL = "https://api.weibo.com/2/statuses/update.json"
+        let parameters = [
+            "access_token" : UserSession.shared.user?.access_token,
+            "status" : statusText//.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        ]
+        
+        request(requestType: .POST, URLString: URL, parameters: parameters as [String : AnyObject]) { (data, error) in
+            if data != nil {
+                completion(true)
+            } else {
+                completion(false)
+                EVALog(message: error)
+            }
+        }
+    }
+    
+    /// 上传图片并发布一条新微博
+    func uploadStatus(statusText: String, image: UIImage, completion: @escaping (_ isSuccess: Bool) -> ()) -> Void {
+        
+        let URL = "https://api.weibo.com/2/statuses/upload.json"
+        let parameters = [
+            "access_token" : UserSession.shared.user?.access_token,
+            "status" : statusText//.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        ]
+        
+        post(URL, parameters: parameters, constructingBodyWith: { (AFMultipartFormData) in
+            
+            if let imageData = image.pngData() {
+                AFMultipartFormData.appendPart(withFileData: imageData, name: "status", fileName: "status.png", mimeType: "image/png")
+            }
+        }, progress: nil, success: { (_, _) in
+            completion(true)
+        }) { (_, error) in
+            completion(false)
+            EVALog(message: error)
+        }
+        
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14038FAD2255F05800347769 /* ReplaceEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14038FAC2255F05800347769 /* ReplaceEmoticon.swift */; };
+		14038FAF2255F21D00347769 /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14038FAE2255F21D00347769 /* String+NSRange.swift */; };
 		1412F1EB22436FF8005092BA /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412F1E922436FF8005092BA /* PublishViewController.swift */; };
 		1412F1EC22436FF8005092BA /* PublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1412F1EA22436FF8005092BA /* PublishViewController.xib */; };
 		1412F1EF224372F8005092BA /* PublishTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412F1EE224372F8005092BA /* PublishTitleView.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14038FAC2255F05800347769 /* ReplaceEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceEmoticon.swift; sourceTree = "<group>"; };
+		14038FAE2255F21D00347769 /* String+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
 		1412F1E922436FF8005092BA /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		1412F1EA22436FF8005092BA /* PublishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublishViewController.xib; sourceTree = "<group>"; };
 		1412F1EE224372F8005092BA /* PublishTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishTitleView.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 				14135BBC22520E490066B9B2 /* Model */,
 				14135BC222520E490066B9B2 /* View */,
 				14135BC422520E490066B9B2 /* UITextView+Emoticon.swift */,
+				14038FAE2255F21D00347769 /* String+NSRange.swift */,
+				14038FAC2255F05800347769 /* ReplaceEmoticon.swift */,
 			);
 			path = Emoticon;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 				14135BC722520E490066B9B2 /* Emoticon.swift in Sources */,
 				14135BCB22520E490066B9B2 /* EmoticonManager.swift in Sources */,
 				1490263A22313EAA00B0EEC9 /* OAuthViewController.swift in Sources */,
+				14038FAF2255F21D00347769 /* String+NSRange.swift in Sources */,
 				14CA7BD6222D048D00E6692E /* HomeTableViewController.swift in Sources */,
 				1490263422313D1400B0EEC9 /* NetworkingManager.swift in Sources */,
 				142C3C44222FC2AA0070EE5B /* AnimatedTransition.swift in Sources */,
@@ -558,6 +565,7 @@
 				14135BC522520E490066B9B2 /* EmoticonViewController.swift in Sources */,
 				14135BCF22520FF90066B9B2 /* OAuthWebView.swift in Sources */,
 				1412F1EF224372F8005092BA /* PublishTitleView.swift in Sources */,
+				14038FAD2255F05800347769 /* ReplaceEmoticon.swift in Sources */,
 				14135BCD22520E490066B9B2 /* UITextView+Emoticon.swift in Sources */,
 				1452ABA92245E08300786EE1 /* PicPickerCollectionView.swift in Sources */,
 				14CA7BE9222D45D200E6692E /* BaseTableViewController.swift in Sources */,
@@ -747,10 +755,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -768,10 +773,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

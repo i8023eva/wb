@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PublishViewController: UIViewController {
     
@@ -179,11 +180,29 @@ extension PublishViewController {
     }
     
     @objc private func cancelBtnClick() {
+        publishTextView.resignFirstResponder()
+        
         dismiss(animated: true, completion: nil)
     }
     
     @objc private func publishBtnClick() {
-        print(publishTextView.getEmoticonText())
+
+        let statusText = publishTextView.getEmoticonText()
+        
+        let finishHandle = { (isSuccess: Bool) -> () in
+            if !isSuccess {
+                SVProgressHUD.showError(withStatus: "发送失败")
+                return
+            }
+            SVProgressHUD.showSuccess(withStatus: "发送成功")
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        if let image = pickImagesArr.first {
+            NetworkingManager.shared.uploadStatus(statusText: statusText, image: image, completion: finishHandle)
+        } else {
+            NetworkingManager.shared.updateStatus(statusText: statusText, completion: finishHandle)
+        }
     }
 }
 

@@ -57,7 +57,7 @@ class HomeTableViewCell: UITableViewCell {
             
             vipImgView.image = statusSession.mbrankReplace
             
-            contentLabel.text = statusSession.status?.text
+            contentLabel.attributedText = ReplaceEmoticon.shared.replaceAttrString(statusText: statusSession.status?.text, font: contentLabel.font)
             
             let collectionSize = getPicCollectionSize(count: statusSession.picURLsReplace.count)
             picCollectionWidthCons.constant = collectionSize.width
@@ -69,7 +69,10 @@ class HomeTableViewCell: UITableViewCell {
             if statusSession.status?.retweeted_status != nil {
                 if let screenName = statusSession.status?.retweeted_status?.user?.screen_name,
                    let retweetedText = statusSession.status?.retweeted_status?.text {
-                    retweetedLabel.text = "@" + "\(screenName)：" + retweetedText
+                    
+                    let retweetedName = "@" + "\(screenName)：" + retweetedText
+                    
+                    retweetedLabel.attributedText = ReplaceEmoticon.shared.replaceAttrString(statusText: retweetedName, font: retweetedLabel.font)
                     
                     retLabelTopCons.constant = 15
                 }
