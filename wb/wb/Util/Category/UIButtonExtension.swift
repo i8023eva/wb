@@ -36,4 +36,12 @@ extension UIButton {
                  for: UIControl.State.highlighted)
         sizeToFit()
     }
+    
+    convenience init(title: String) {
+        self.init()
+        layer.cornerRadius = 3
+        backgroundColor = UIColor.lightGray
+        titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        setTitle(title, for: .normal)
+    }
 }

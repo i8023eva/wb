@@ -24,10 +24,19 @@ let userInfo: String = "UserInfo.plist"
 
 let navHeight: CGFloat = 44
 
-/// 通知
+let MainWidth = UIScreen.main.bounds.width
+let MainHeight = UIScreen.main.bounds.height
+
+
+/// 键盘图片选择通知
 let PicPickerCellAddNotification: NSNotification.Name = NSNotification.Name(rawValue: "PicPickerCellAddNotification")
+/// 键盘图片选择通知
 let PicPickerCellRemoveNotification: NSNotification.Name = NSNotification.Name(rawValue: "PicPickerCellRemoveNotification")
 
+/// 显示图片浏览器
+let ShowPhotoBrowserNotification: Notification.Name = Notification.Name("ShowPhotoBrowserNotification")
+let PhotoIndexPathKey = "PhotoIndexPath"
+let PhotoURLArrKey = "PhotoURLArr"
 
 extension Selector {
     

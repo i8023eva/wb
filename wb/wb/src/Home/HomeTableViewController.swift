@@ -47,6 +47,12 @@ class HomeTableViewController: BaseTableViewController {
         
         setupHeaderView()
         setupFooterView()
+        
+        addNotification()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -105,10 +111,14 @@ extension HomeTableViewController {
         for session in sessionArr {
             for picUrl in session.picURLsReplace {
                 group.enter()
-                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picUrl, options: [], progress: nil, completed: { (_, _, _, _) in
+                SDWebImageManager.shared.imageLoader.requestImage(with: picUrl, options: [], context: nil, progress: nil) { (_, _, _, _) in
                     //                    EVALog(message: "下载图片")
                     group.leave()
-                })
+                }
+//                downloadImage(with: picUrl, options: [], progress: nil, completed: { (_, _, _, _) in
+//                    //                    EVALog(message: "下载图片")
+//                    group.leave()
+//                })
             }
         }
         
@@ -205,5 +215,20 @@ extension HomeTableViewController{
         animatedTransition.presentedFrame = CGRect(x: UIScreen.main.bounds.width * 0.5 - width * 0.5, y: y, width: width, height: 200)
         
         present(pop, animated: true, completion: nil)
+    }
+}
+
+extension HomeTableViewController {
+    
+    private func addNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser(note:)), name: ShowPhotoBrowserNotification, object: nil)
+    }
+    
+    @objc private func showPhotoBrowser(note: Notification) {
+        
+        let indexPath = note.userInfo?[PhotoIndexPathKey]
+        let photoURLArr = note.userInfo?[PhotoURLArrKey]
+        
+        present(PhotoBrowserViewController(indexPath: indexPath as! IndexPath, picURLArr: photoURLArr as! [URL]), animated: true, completion: nil)
     }
 }

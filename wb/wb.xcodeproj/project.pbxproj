@@ -34,6 +34,8 @@
 		1465A5282234F7D000BB2251 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A5272234F7D000BB2251 /* UserSession.swift */; };
 		1465A52C223533B100BB2251 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1465A52A223533B100BB2251 /* WelcomeViewController.swift */; };
 		1465A52D223533B100BB2251 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465A52B223533B100BB2251 /* WelcomeViewController.xib */; };
+		14729727225C9A1D001F623D /* PhotoBrowserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14729726225C9A1D001F623D /* PhotoBrowserCollectionViewCell.swift */; };
+		14729729225CA2A7001F623D /* PhotoLoadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14729728225CA2A7001F623D /* PhotoLoadProgressView.swift */; };
 		1474F47A2233DD8F00273B64 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474F4792233DD8F00273B64 /* UserAccount.swift */; };
 		14776C13223F45D900EDF619 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C12223F45D900EDF619 /* User.swift */; };
 		14776C15223F54CB00EDF619 /* StatusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C14223F54CB00EDF619 /* StatusSession.swift */; };
@@ -47,6 +49,7 @@
 		149B470F222E6D2C00ED8D72 /* PopoverViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B470E222E6D2C00ED8D72 /* PopoverViewContoller.swift */; };
 		149B4711222E6D3900ED8D72 /* PopoverViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149B4710222E6D3900ED8D72 /* PopoverViewContoller.xib */; };
 		149B4713222E9C6400ED8D72 /* EVAPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B4712222E9C6400ED8D72 /* EVAPresentationController.swift */; };
+		14B9B2A9225C4DCC00988EE1 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B9B2A8225C4DCC00988EE1 /* PhotoBrowserViewController.swift */; };
 		14C0A10F223E2CC5004B9337 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0A10E223E2CC5004B9337 /* Status.swift */; };
 		14C0A12F223E7350004B9337 /* DateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0A12E223E7350004B9337 /* DateEx.swift */; };
 		14CA7BCD222D03CD00E6692E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CA7BCB222D03CD00E6692E /* Home.storyboard */; };
@@ -97,6 +100,8 @@
 		1465A5272234F7D000BB2251 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		1465A52A223533B100BB2251 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1465A52B223533B100BB2251 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		14729726225C9A1D001F623D /* PhotoBrowserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCollectionViewCell.swift; sourceTree = "<group>"; };
+		14729728225CA2A7001F623D /* PhotoLoadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoadProgressView.swift; sourceTree = "<group>"; };
 		1474F4792233DD8F00273B64 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		14776C12223F45D900EDF619 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14776C14223F54CB00EDF619 /* StatusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSession.swift; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 		149B470E222E6D2C00ED8D72 /* PopoverViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewContoller.swift; sourceTree = "<group>"; };
 		149B4710222E6D3900ED8D72 /* PopoverViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewContoller.xib; sourceTree = "<group>"; };
 		149B4712222E9C6400ED8D72 /* EVAPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVAPresentationController.swift; sourceTree = "<group>"; };
+		14B9B2A8225C4DCC00988EE1 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		14C0A10E223E2CC5004B9337 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		14C0A12E223E7350004B9337 /* DateEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEx.swift; sourceTree = "<group>"; };
 		14CA7BCC222D03CD00E6692E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = wb/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 		142F8D3B222BAEB900C01EA1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				14B9B2A7225C4D5D00988EE1 /* PhotoBrowser */,
 				149B470D222E6C3300ED8D72 /* Popover */,
 				14C0A10D223E2C7D004B9337 /* Model */,
 				14EBB09E2240CF1200BF942A /* View */,
@@ -344,6 +351,16 @@
 				142C3C43222FC2AA0070EE5B /* AnimatedTransition.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		14B9B2A7225C4D5D00988EE1 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				14B9B2A8225C4DCC00988EE1 /* PhotoBrowserViewController.swift */,
+				14729726225C9A1D001F623D /* PhotoBrowserCollectionViewCell.swift */,
+				14729728225CA2A7001F623D /* PhotoLoadProgressView.swift */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		14C0A10D223E2C7D004B9337 /* Model */ = {
@@ -545,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1490263622313DF900B0EEC9 /* Common.swift in Sources */,
+				14729727225C9A1D001F623D /* PhotoBrowserCollectionViewCell.swift in Sources */,
 				1465A52C223533B100BB2251 /* WelcomeViewController.swift in Sources */,
 				14135BCA22520E490066B9B2 /* EmoticonSession.swift in Sources */,
 				14135BC822520E490066B9B2 /* EmoticonPackage.swift in Sources */,
@@ -572,10 +590,12 @@
 				1412F1F322437B8C005092BA /* PublishTextView.swift in Sources */,
 				14CA7BD8222D049600E6692E /* MessageTableViewController.swift in Sources */,
 				1465A5282234F7D000BB2251 /* UserSession.swift in Sources */,
+				14B9B2A9225C4DCC00988EE1 /* PhotoBrowserViewController.swift in Sources */,
 				149B470C222E613B00ED8D72 /* TitleButton.swift in Sources */,
 				14CA7BDE222D0A4D00E6692E /* MainViewController.swift in Sources */,
 				149B4709222E5C6900ED8D72 /* UIBarButtonItemEx.swift in Sources */,
 				14EBB0A22240D0FE00BF942A /* PicCollectionViewCell.swift in Sources */,
+				14729729225CA2A7001F623D /* PhotoLoadProgressView.swift in Sources */,
 				14CA7BE4222D18B300E6692E /* UIButtonExtension.swift in Sources */,
 				14EBB0A02240CF5D00BF942A /* PicCollectionView.swift in Sources */,
 				14CA7BEB222D45F700E6692E /* VisitorView.swift in Sources */,
@@ -755,7 +775,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -773,7 +796,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54QJF9L7X8;
 				INFOPLIST_FILE = wb/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = i8023eva.wb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

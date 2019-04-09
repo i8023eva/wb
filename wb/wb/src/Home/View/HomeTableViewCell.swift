@@ -133,7 +133,7 @@ extension HomeTableViewCell {
             let URLString = statusSession?.picURLsReplace.first?.absoluteString
             // FIXME: gif没缓存  取不到值  数据少 下次发现  约束问题
             // MemoryCache 没取到值
-            if let URLImage = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: URLString) {
+            if let URLImage = SDImageCache.shared.imageFromDiskCache(forKey: URLString) {
                 layout.itemSize = CGSize(width: URLImage.size.width, height: URLImage.size.height)
                 
                 return CGSize(width: URLImage.size.width, height: URLImage.size.height)

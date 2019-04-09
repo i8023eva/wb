@@ -14,6 +14,7 @@ class PicCollectionView: UICollectionView {
         super.awakeFromNib()
         
         dataSource = self
+        delegate = self
     }
     /// 配图 URL
     var picURLArr: [URL] = [URL]() {
@@ -37,5 +38,15 @@ extension PicCollectionView: UICollectionViewDataSource {
         cell.picURL = picURLArr[indexPath.item]
         
         return cell
+    }
+}
+
+extension PicCollectionView: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let userInfo: [String : Any] = [PhotoIndexPathKey : indexPath, PhotoURLArrKey : picURLArr]
+        
+        NotificationCenter.default.post(name: ShowPhotoBrowserNotification, object: nil, userInfo: userInfo)
     }
 }
