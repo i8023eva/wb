@@ -198,8 +198,8 @@ extension PublishViewController {
             self.dismiss(animated: true, completion: nil)
         }
         
-        if let image = pickImagesArr.first {
-            NetworkingManager.shared.uploadStatus(statusText: statusText, image: image, completion: finishHandle)
+        if pickImagesArr.first != nil {
+            NetworkingManager.shared.uploadStatus(statusText: statusText, imageArr: pickImagesArr, completion: finishHandle)
         } else {
             NetworkingManager.shared.updateStatus(statusText: statusText, completion: finishHandle)
         }

@@ -19,14 +19,9 @@ class NetworkingManager: AFHTTPSessionManager {
     static let shared: NetworkingManager = {
         let manager = NetworkingManager()
 //        manager.responseSerializer = AFJSONResponseSerializer(readingOptions: JSONSerialization.ReadingOptions.allowFragments)
-//        manager.requestSerializer = AFJSONRequestSerializer(writingOptions: .prettyPrinted)
-        
+//        manager.requestSerializer = AFJSONRequestSerializer(writingOptions: [])
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
-        manager.responseSerializer.acceptableContentTypes?.insert("multipart/form-data")
         manager.responseSerializer.acceptableContentTypes?.insert("text/plain")
-        
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         return manager
     }()
 }
@@ -124,10 +119,11 @@ extension NetworkingManager {
     /// 发布一条新微博
     func updateStatus(statusText: String, completion: @escaping (_ isSuccess: Bool) -> ()) -> Void {
         
-        let URL = "https://api.weibo.com/2/statuses/update.json"
+        let URL = "https://api.weibo.com/2/statuses/share.json"
         let parameters = [
             "access_token" : UserSession.shared.user?.access_token,
-            "status" : statusText//.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+            "status" : statusText + " https://i8023eva.wordpress.com"
+            //.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         ]
         
         request(requestType: .POST, URLString: URL, parameters: parameters as [String : AnyObject]) { (data, error) in
@@ -140,19 +136,20 @@ extension NetworkingManager {
         }
     }
     
-    /// 上传图片并发布一条新微博
-    func uploadStatus(statusText: String, image: UIImage, completion: @escaping (_ isSuccess: Bool) -> ()) -> Void {
-        
-        let URL = "https://api.weibo.com/2/statuses/upload.json"
+    /// 上传图片并发布一条新微博   只使用最后一张图片
+    func uploadStatus(statusText: String, imageArr: [UIImage], completion: @escaping (_ isSuccess: Bool) -> ()) -> Void {
+        let URL = "https://api.weibo.com/2/statuses/share.json"
         let parameters = [
             "access_token" : UserSession.shared.user?.access_token,
-            "status" : statusText//.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+            "status" : statusText + " https://i8023eva.wordpress.com"
+            //.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         ]
-        
+        requestSerializer.setValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
         post(URL, parameters: parameters, constructingBodyWith: { (AFMultipartFormData) in
-            
-            if let imageData = image.pngData() {
-                AFMultipartFormData.appendPart(withFileData: imageData, name: "status", fileName: "status.png", mimeType: "image/png")
+            for image in imageArr {
+                if let imageData = image.jpegData(compressionQuality: 0.1) {
+                    AFMultipartFormData.appendPart(withFileData: imageData, name: "pic", fileName: "\(UUID()).jpeg", mimeType: "image/jpeg")
+                }
             }
         }, progress: nil, success: { (_, _) in
             completion(true)

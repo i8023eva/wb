@@ -12,7 +12,9 @@ class PhotoLoadProgressView: UIView {
 
     var progress: CGFloat = 0 {
         didSet {
-            setNeedsDisplay()
+            DispatchQueue.main.async {
+                self.setNeedsDisplay()
+            }
         }
     }
 
