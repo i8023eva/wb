@@ -9,11 +9,16 @@
 import UIKit
 import SDWebImage
 
+protocol PhotoBrowserCollectionViewCellDelegate: AnyObject {
+    func imageViewTap()
+}
+
 class PhotoBrowserCollectionViewCell: UICollectionViewCell {
     
     private lazy var scrollView: UIScrollView = UIScrollView()
-    private lazy var imageView: UIImageView = UIImageView()
+    lazy var imageView: UIImageView = UIImageView()
     private lazy var progressView: PhotoLoadProgressView = PhotoLoadProgressView()
+    var delegate: PhotoBrowserCollectionViewCellDelegate?
     
     var picURL: URL? {
         didSet {
@@ -38,9 +43,16 @@ extension PhotoBrowserCollectionViewCell {
         contentView.addSubview(progressView)
         scrollView.addSubview(imageView)
         scrollView.frame = contentView.bounds
+//        scrollView.frame.size.width -= 20
         progressView.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
         progressView.center = CGPoint(x: MainWidth / 2, y: MainHeight / 2)
         progressView.isHidden = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapGesture)))
+        imageView.isUserInteractionEnabled = true
+    }
+    
+    @objc private func imageTapGesture() {
+        delegate?.imageViewTap()
     }
     
     private func didSetPicURL(picURL: URL?) {

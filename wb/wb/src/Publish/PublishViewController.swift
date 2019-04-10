@@ -140,6 +140,7 @@ extension PublishViewController {
 // MARK: - UIImagePickerControllerDelegate
 extension PublishViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 //    选择图片之后
+    // FIXME: [discovery] errors
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
