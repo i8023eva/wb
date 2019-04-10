@@ -16,22 +16,22 @@ class HomeTableViewController: BaseTableViewController {
     private lazy var animatedTransition: AnimatedTransition = AnimatedTransition {[weak self] (status) in
         self?.titleBtn.isSelected = status
     }
+    private lazy var photoBrowserTransition: PhotoBrowserModalTransition = PhotoBrowserModalTransition()
     
     private lazy var titleBtn: TitleButton = TitleButton()
     
     private lazy var statusSessionArr: [StatusSession] = [StatusSession]()
     
     private lazy var tipLabel: UILabel  = {
-        let label = UILabel()
-        label.frame = CGRect(x: 0, y: navHeight - 44, width: UIScreen.main.bounds.width, height: 44)
-        label.backgroundColor = UIColor.orange
-        label.textColor = UIColor.white
-        label.textAlignment = .center
-        label.isHidden = true
+        $0.frame = CGRect(x: 0, y: navHeight - 44, width: UIScreen.main.bounds.width, height: 44)
+        $0.backgroundColor = UIColor.orange
+        $0.textColor = UIColor.white
+        $0.textAlignment = .center
+        $0.isHidden = true
         
-        navigationController?.navigationBar.insertSubview(label, at: 0)
-        return label
-    }()
+        navigationController?.navigationBar.insertSubview($0, at: 0)
+        return $0
+    }(UILabel())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,7 +135,7 @@ extension HomeTableViewController {
     
     private func showTipLabel(count: Int) {
         tipLabel.isHidden = false
-        tipLabel.text = (count == 0 ? "没有🆕" : "\(count) 条微博")
+        tipLabel.text = (count == 0 ? "没有🆕weibo" : "\(count) 条微博")
 
         UIView.animate(withDuration: 1.0, animations: {
             self.tipLabel.frame.origin.y = navHeight
@@ -225,10 +225,17 @@ extension HomeTableViewController {
     }
     
     @objc private func showPhotoBrowser(note: Notification) {
+        let indexPath = note.userInfo?[PhotoIndexPathKey] as! IndexPath
+        let photoURLArr = note.userInfo?[PhotoURLArrKey] as! [URL]
+        let object = note.object as! PicCollectionView
+        let photoBrowserVC = PhotoBrowserViewController(indexPath: indexPath, picURLArr: photoURLArr)
         
-        let indexPath = note.userInfo?[PhotoIndexPathKey]
-        let photoURLArr = note.userInfo?[PhotoURLArrKey]
+        photoBrowserVC.modalPresentationStyle = .custom
+        photoBrowserVC.transitioningDelegate = photoBrowserTransition
+        photoBrowserTransition.modalDelegate = object
+        photoBrowserTransition.indexPath = indexPath
+        photoBrowserTransition.dismissDelegate = photoBrowserVC
         
-        present(PhotoBrowserViewController(indexPath: indexPath as! IndexPath, picURLArr: photoURLArr as! [URL]), animated: true, completion: nil)
+        present(photoBrowserVC, animated: true, completion: nil)
     }
 }

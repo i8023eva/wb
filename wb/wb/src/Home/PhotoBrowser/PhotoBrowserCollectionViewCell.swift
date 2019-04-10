@@ -67,6 +67,8 @@ extension PhotoBrowserCollectionViewCell {
             y = (MainHeight - height) * 0.5
         }
         imageView.frame = CGRect(x: 0, y: y, width: MainWidth, height: height)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         self.progressView.isHidden = false
         imageView.sd_setImage(with: getBmiddleURL(picURL: picURL), placeholderImage: image, options: [], progress: { (current, total, _) in
             self.progressView.progress = CGFloat(current) / CGFloat(total)

@@ -34,7 +34,7 @@ class PhotoBrowserViewController: UIViewController {
     override func loadView() {
         super.loadView()
         // MARK: 为collectionitem 加间距
-        view.bounds.size.width += 20
+        view.frame.size.width += 20
     }
     
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ extension PhotoBrowserViewController {
             make.size.equalTo(CGSize(width: 80, height: 35))
         }
         closeButton.snp_makeConstraints { (make) in
-            make.right.equalTo(-20)
+            make.right.equalTo(-40)
             make.bottom.equalTo(-64)
             make.size.equalTo(saveButton.snp_size)
         }
@@ -106,6 +106,25 @@ extension PhotoBrowserViewController: UICollectionViewDataSource {
 extension PhotoBrowserViewController: PhotoBrowserCollectionViewCellDelegate {
     func imageViewTap() {
         closeBtnClick()
+    }
+}
+
+// MARK: - PhotoBrowserDismissTransitionDelegate
+extension PhotoBrowserViewController: PhotoBrowserDismissTransitionDelegate {
+    func itemWithIndexPath() -> IndexPath? {
+        guard let cell = collectionView.visibleCells.first else {return nil}
+        return collectionView.indexPath(for: cell)
+    }
+    
+    func itemWithImage() -> UIImageView? {
+       return {
+            let cell = collectionView.visibleCells.first as! PhotoBrowserCollectionViewCell
+            $0.frame = cell.imageView.frame
+            $0.image = cell.imageView.image
+            $0.contentMode = .scaleAspectFill
+            $0.clipsToBounds = true
+            return $0
+        }(UIImageView())
     }
 }
 

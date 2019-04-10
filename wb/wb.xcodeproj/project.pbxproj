@@ -40,6 +40,7 @@
 		14776C13223F45D900EDF619 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C12223F45D900EDF619 /* User.swift */; };
 		14776C15223F54CB00EDF619 /* StatusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C14223F54CB00EDF619 /* StatusSession.swift */; };
 		14776C17223F586600EDF619 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14776C16223F586600EDF619 /* HomeTableViewCell.swift */; };
+		148F54F6225DE5A4006495DE /* PhotoBrowserModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148F54F5225DE5A4006495DE /* PhotoBrowserModalTransition.swift */; };
 		1490263422313D1400B0EEC9 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263322313D1400B0EEC9 /* NetworkingManager.swift */; };
 		1490263622313DF900B0EEC9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263522313DF900B0EEC9 /* Common.swift */; };
 		1490263A22313EAA00B0EEC9 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490263822313EAA00B0EEC9 /* OAuthViewController.swift */; };
@@ -106,6 +107,7 @@
 		14776C12223F45D900EDF619 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14776C14223F54CB00EDF619 /* StatusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSession.swift; sourceTree = "<group>"; };
 		14776C16223F586600EDF619 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		148F54F5225DE5A4006495DE /* PhotoBrowserModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserModalTransition.swift; sourceTree = "<group>"; };
 		1490263322313D1400B0EEC9 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		1490263522313DF900B0EEC9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1490263822313EAA00B0EEC9 /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				14B9B2A8225C4DCC00988EE1 /* PhotoBrowserViewController.swift */,
 				14729726225C9A1D001F623D /* PhotoBrowserCollectionViewCell.swift */,
 				14729728225CA2A7001F623D /* PhotoLoadProgressView.swift */,
+				148F54F5225DE5A4006495DE /* PhotoBrowserModalTransition.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				14135BCC22520E490066B9B2 /* EmoticonCollectionViewCell.swift in Sources */,
 				14776C15223F54CB00EDF619 /* StatusSession.swift in Sources */,
 				1452ABAC22463D6400786EE1 /* PicPickerCollectionCell.swift in Sources */,
+				148F54F6225DE5A4006495DE /* PhotoBrowserModalTransition.swift in Sources */,
 				14135BC622520E490066B9B2 /* EmoticonAttachment.swift in Sources */,
 				14776C13223F45D900EDF619 /* User.swift in Sources */,
 			);
